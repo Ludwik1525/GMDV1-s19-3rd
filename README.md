@@ -1,2 +1,5 @@
-# GMDV1-s19-3rd
-Repo for 3rd GMD project
+# GMD 3rd project
+Requirements:<br/>
+2D local multiplayer game OR a 2D mobile game.<br/>
+Everything from basic elements (input, physics, audio, animations...).<br/>
+A menu and multiple user interface elements.<br/>
