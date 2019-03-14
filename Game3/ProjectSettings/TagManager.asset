@@ -51,3 +51,6 @@ TagManager:
   - name: Foreground
     uniqueID: 99262561
     locked: 0
+  - name: Textplane
+    uniqueID: 422368859
+    locked: 0
