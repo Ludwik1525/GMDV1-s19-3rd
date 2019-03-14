@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Rome\\Documents\\Unity projects\\Github Repos\\GMD 3 - worms\\GMDV1-s19-3rd\\Game3\\Assembly-CSharp.csproj",
+  "TargetFramework": "v3.5",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
