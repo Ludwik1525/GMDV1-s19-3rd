@@ -8,7 +8,8 @@ public class PlayerHealth : MonoBehaviour {
 	private Canvas _canvas;
 	private Text _hp;
 	private int _hpNumber;
-	public GameObject _user, _canvasObject;
+	public GameObject user;
+	private GameObject canvasObject;
 	private RectTransform rectTranny;
 
 
@@ -21,17 +22,17 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print("Start");
-		_user = GetComponent<GameObject>();
-		print(_user);
+		user = GetComponent<GameObject>();
+		print(user);
 		AddCanvasAndText();
 	}
 
 	void AddCanvasAndText()
 	{
 		print("addCanvasReached");
-		if(_user){
+		if(user){
 			print("Hey");
-			print(_user.GetComponent<GameObject>());
+			print(user.GetComponent<GameObject>());
 		}
 	}
 	

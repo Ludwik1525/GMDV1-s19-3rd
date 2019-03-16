@@ -6,6 +6,7 @@ public class PlayerControls : MonoBehaviour {
 
 	[SerializeField]public float moveSpeed,jumpHeight,moveHorizontal,moveHorizontalP2;
 	[SerializeField]private Vector2 movement;
+	[SerializeField]public TeamHealth teamHealth;
 	public GameObject p1,p2;
 	private Rigidbody2D player;
 	public Rigidbody2D rgbd1,rgbd2;
@@ -17,6 +18,7 @@ public class PlayerControls : MonoBehaviour {
 		rgbd1 = p1.GetComponent<Rigidbody2D>();
 		rgbd2 = p2.GetComponent<Rigidbody2D>();
 		jumpHeight = 20;
+		teamHealth.setSize(0.4f);
 		
 	}
 	
