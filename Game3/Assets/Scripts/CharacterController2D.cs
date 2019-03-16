@@ -95,4 +95,5 @@ public class CharacterController2D : MonoBehaviour
         _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
         _jumps -= 1;
     }
+
 }
