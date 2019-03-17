@@ -68,11 +68,8 @@
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\MainMenuLaunching.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />
-    <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\Scripts\PlayerMov.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement1.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement2.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\TeamHealth.cs" />
     <Compile Include="Assets\Scripts\TurnMaker.cs" />

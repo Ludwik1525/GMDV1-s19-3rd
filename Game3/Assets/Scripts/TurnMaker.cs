@@ -37,12 +37,12 @@ public class TurnMaker : MonoBehaviour
         switch (currentP%2)
         {
             case 0:
-                p0.GetComponent<PlayerMov>().enabled = true;
-                p1.GetComponent<PlayerMov>().enabled = false;
+                p0.GetComponent<PlayerMovement>().enabled = true;
+                p1.GetComponent<PlayerMovement>().enabled = false;
                 break;
             case 1:
-                p0.GetComponent<PlayerMov>().enabled = false;
-                p1.GetComponent<PlayerMov>().enabled = true;
+                p0.GetComponent<PlayerMovement>().enabled = false;
+                p1.GetComponent<PlayerMovement>().enabled = true;
                 break;
         }
     }

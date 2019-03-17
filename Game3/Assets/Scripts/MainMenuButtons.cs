@@ -33,7 +33,7 @@ public class MainMenuButtons : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     void QuitGame()
