@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour {
+public class PlayerControls : MonoBehaviour
+{
 
-	[SerializeField]public float moveSpeed,jumpHeight,moveHorizontal,moveHorizontalP2;
+    [SerializeField] public float moveSpeed, jumpHeight, moveHorizontal;//,moveHorizontalP2;
 	[SerializeField]private Vector2 movement;
 //	[SerializeField]public TeamHealth teamHealth;
 	public GameObject p1,p2;
@@ -57,8 +58,8 @@ public class PlayerControls : MonoBehaviour {
             rgbd1.velocity = Vector3.SmoothDamp(rgbd1.velocity, targetVelocity1, ref m_Velocity, 0.05f);
  
 
-            Vector3 targetVelocity2 = new Vector2(Input.GetAxis("HorizontalP2") * moveSpeed * Time.fixedDeltaTime * 10f, rgbd2.velocity.y);
-            rgbd2.velocity = Vector3.SmoothDamp(rgbd2.velocity, targetVelocity2, ref m_Velocity, 0.05f);
+           // Vector3 targetVelocity2 = new Vector2(Input.GetAxis("HorizontalP2") * moveSpeed * Time.fixedDeltaTime * 10f, rgbd2.velocity.y);
+           // rgbd2.velocity = Vector3.SmoothDamp(rgbd2.velocity, targetVelocity2, ref m_Velocity, 0.05f);
     }
 
 }
