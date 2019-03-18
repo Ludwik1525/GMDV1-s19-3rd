@@ -12,6 +12,8 @@ public class Winner : MonoBehaviour
     public Text blue;
     public bool redWon = false;
     public GameObject pauseStuff;
+    public GameObject counter;
+    public bool hasGameEnded = false;
 
     void Start () {
         Time.timeScale = 0.0f;
@@ -20,21 +22,22 @@ public class Winner : MonoBehaviour
 	void Update () {
 		
         pauseStuff.gameObject.SetActive(false);
+        counter.gameObject.SetActive(false);
 
-        //if(game has ended)
-        //{
-        //    winningStuff.gameObject.SetActive(true);
-        //    if (redWon)
-        //    {
-        //        red.gameObject.SetActive(true);
-        //        blue.gameObject.SetActive(false);
-        //    }
-        //    else
-        //    {
-        //        red.gameObject.SetActive(false);
-        //        blue.gameObject.SetActive(true);
-        //    }
-        //}
+        if (hasGameEnded)
+        {
+            winningStuff.gameObject.SetActive(true);
+            if (redWon)
+            {
+                red.gameObject.SetActive(true);
+                blue.gameObject.SetActive(false);
+            }
+            else
+            {
+                red.gameObject.SetActive(false);
+                blue.gameObject.SetActive(true);
+            }
+        }
 
         exit.onClick.AddListener(BackToMenu);
 

@@ -1008,6 +1008,8 @@ MonoBehaviour:
   blue: {fileID: 1856860592}
   redWon: 0
   pauseStuff: {fileID: 1827116537}
+  counter: {fileID: 1202060473}
+  hasGameEnded: 0
 --- !u!1 &506066205
 GameObject:
   m_ObjectHideFlags: 0
