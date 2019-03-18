@@ -28,10 +28,12 @@ public class TurnMaker : MonoBehaviour
     {
         if (end)
         {
+            StopAllCoroutines();
             counter.color = Color.white;
             counter.text = "" + (tourTime+1);
             StartCoroutine(Counter(tourTime, counter));
             currentP++;
+            end = false;
         }
 
         switch (currentP%2)

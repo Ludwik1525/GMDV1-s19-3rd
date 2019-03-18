@@ -782,7 +782,7 @@ MonoBehaviour:
   p0: {fileID: 973467641}
   p1: {fileID: 847553157}
   counter: {fileID: 1202060475}
-  tourTime: 30
+  tourTime: 10
 --- !u!114 &494224550
 MonoBehaviour:
   m_ObjectHideFlags: 0
