@@ -11,10 +11,14 @@ public class PauseGame : MonoBehaviour
     private bool isPaused = false;
     public Button resume;
     public Button menu;
+    public Slider sliderMusic;
+    public Slider sliderSounds;
 
-	void Start () {
+    void Start () {
 		pauseStuff.gameObject.SetActive(false);
-	}
+        sliderMusic.value = 0.5f;
+        sliderSounds.value = 0.5f;
+}
 	
 	void Update () {
 
@@ -36,7 +40,8 @@ public class PauseGame : MonoBehaviour
                 Time.timeScale = 1.0f;
             }
         }
-	}
+        AudioListener.volume = sliderMusic.value;
+    }
 
     void Resume()
     {
