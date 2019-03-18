@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\ApplicationController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\HPSpawner.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\MainMenuLaunching.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />

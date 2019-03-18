@@ -16,16 +16,15 @@ public class Winner : MonoBehaviour
     public bool hasGameEnded = false;
 
     void Start () {
-        Time.timeScale = 0.0f;
     }
 	
 	void Update () {
 		
-        pauseStuff.gameObject.SetActive(false);
-        counter.gameObject.SetActive(false);
-
         if (hasGameEnded)
         {
+            pauseStuff.gameObject.SetActive(false);
+            counter.gameObject.SetActive(false);
+            Time.timeScale = 0.0f;
             winningStuff.gameObject.SetActive(true);
             if (redWon)
             {
