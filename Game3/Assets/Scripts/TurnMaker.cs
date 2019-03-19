@@ -68,6 +68,7 @@ public class TurnMaker : MonoBehaviour
 
     public void EnablePlayer(GameObject player)
     {
+        player.GetComponent<PlayerMovement>().keyFunctionOpen = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayAnim>().enabled = true;
     }
@@ -75,6 +76,7 @@ public class TurnMaker : MonoBehaviour
 
     public void DisablePlayer(GameObject player)
     {
+        player.GetComponent<PlayerMovement>().keyFunctionOpen = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
     }

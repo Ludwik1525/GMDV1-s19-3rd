@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D player;
     private Vector3 m_Velocity = Vector3.zero;
     public bool isGrounded=true;
+    public bool keyFunctionOpen;
 
 
     void Start()
@@ -21,15 +22,18 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+      if (keyFunctionOpen)
         {
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
                 player.AddForce(new Vector2(0f, jumpHeight));
-        }
+            }
 
-        Vector3 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * 10f,
-            player.velocity.y);
-        player.velocity = Vector3.SmoothDamp(player.velocity, targetVelocity, ref m_Velocity, 0.05f);
-    }
+            Vector3 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * 10f,
+                player.velocity.y);
+            player.velocity = Vector3.SmoothDamp(player.velocity, targetVelocity, ref m_Velocity, 0.05f);
+       }
+   }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
