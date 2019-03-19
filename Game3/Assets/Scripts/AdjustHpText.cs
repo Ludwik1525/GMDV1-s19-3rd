@@ -23,6 +23,6 @@ public class AdjustHpText : MonoBehaviour {
 
 		hpText.transform.position = playerPos;
 		
-		print(hpText.transform.position + "hptext position");
+		//print(hpText.transform.position + "hptext position");
 	}
 }

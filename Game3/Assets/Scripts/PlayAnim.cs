@@ -87,7 +87,7 @@ public class PlayAnim : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Enter ground");
+        //Debug.Log("Enter ground");
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
@@ -96,7 +96,7 @@ public class PlayAnim : MonoBehaviour {
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        Debug.Log("Leave ground");
+        //Debug.Log("Leave ground");
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = false;
