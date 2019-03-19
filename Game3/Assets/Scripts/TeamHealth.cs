@@ -12,9 +12,9 @@ public class TeamHealth : MonoBehaviour {
 	
 	
 	void Awake(){
-		_totalHpFirst = 0;
-		_totalHp = 0;
-		timesSet = 0;
+		_totalHpFirst = 200;
+		_totalHp = 100;
+		timesSet = 1;
 	}
 	// Use this for initialization
 	void Start () {
@@ -38,6 +38,8 @@ public class TeamHealth : MonoBehaviour {
 			timesSet++;			
 
 		}else {
+			print(_totalHp + "total hp");
+			print(_totalHpFirst + "total hp first");
 
 		_totalHp -= dmg;
 		relation = _totalHp/_totalHpFirst;
@@ -50,15 +52,16 @@ public class TeamHealth : MonoBehaviour {
 
 	//should probably be executed every time a shot has been fired.
 	public void setTotalHp(){				
-		
 		numberOfPlayers = 0;
-		Transform teamTrans = transform.GetComponentInParent<Transform>();
+		Transform teamTrans = transform.Find("/Team").GetComponent<Transform>();		
 			foreach(Transform playertrans in teamTrans){
+				
 				if(playertrans.CompareTag("Player")){
 			
 				playerHealth = playertrans.GetComponent<PlayerHealth>();				
 				_totalHp += playerHealth.getPlayerHp();				
 				numberOfPlayers++;
+				print(numberOfPlayers);
 				}
 
 			}
