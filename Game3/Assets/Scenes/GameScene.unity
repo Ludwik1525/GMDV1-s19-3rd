@@ -2100,7 +2100,6 @@ GameObject:
   - component: {fileID: 847553167}
   - component: {fileID: 847553166}
   - component: {fileID: 847553165}
-  - component: {fileID: 847553162}
   - component: {fileID: 847553161}
   - component: {fileID: 847553160}
   - component: {fileID: 847553158}
@@ -2193,26 +2192,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 494224553}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &847553162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114044608926888024, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 847553157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b670b756af670d64a959087bd6503175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  jumpHeight: 45
-  movement: {x: 0, y: 0}
-  moveHorizontal: 0
-  isGrounded: 0
-  keyFunctionOpen: 0
-  source: {fileID: 0}
-  jump: {fileID: 0}
 --- !u!114 &847553163
 MonoBehaviour:
   m_ObjectHideFlags: 0
