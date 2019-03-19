@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded=true;
     public bool keyFunctionOpen;
 
+    public AudioSource source;
+    public AudioClip jump;
+
 
     void Start()
     {
@@ -22,17 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
       if (keyFunctionOpen)
         {
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 player.AddForce(new Vector2(0f, jumpHeight));
+                source.PlayOneShot(jump);
             }
 
             Vector3 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime * 10f,
                 player.velocity.y);
             player.velocity = Vector3.SmoothDamp(player.velocity, targetVelocity, ref m_Velocity, 0.05f);
-       }
+        }
    }
 
     private void OnCollisionEnter2D(Collision2D col)

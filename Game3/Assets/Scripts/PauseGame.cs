@@ -40,7 +40,8 @@ public class PauseGame : MonoBehaviour
                 Time.timeScale = 1.0f;
             }
         }
-        AudioListener.volume = sliderMusic.value;
+        GetComponent<AudioSource>().volume = sliderMusic.value;
+        GameObject.FindGameObjectWithTag("Bckg").GetComponent<AudioSource>().volume = sliderSounds.value;
     }
 
     void Resume()

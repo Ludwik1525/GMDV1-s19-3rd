@@ -25,8 +25,14 @@ public class PlayAnim : MonoBehaviour {
     public string idle;
     public string jump;
 
+
     // Update is called once per frame
     void Update () {
+
+        if (isIdle)
+        {
+            anim.Play(idle);
+        }
 
         if (playerMovement.keyFunctionOpen == true)
         {
