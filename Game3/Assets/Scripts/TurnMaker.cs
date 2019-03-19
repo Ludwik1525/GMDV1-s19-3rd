@@ -39,12 +39,12 @@ public class TurnMaker : MonoBehaviour
         switch (currentP%2)
         {
             case 0:
-                p0.GetComponent<PlayerMovement>().enabled = true;
-                p1.GetComponent<PlayerMovement>().enabled = false;
+                EnablePlayer(p0);
+                DisablePlayer(p1);
                 break;
             case 1:
-                p0.GetComponent<PlayerMovement>().enabled = false;
-                p1.GetComponent<PlayerMovement>().enabled = true;
+                DisablePlayer(p0);
+                EnablePlayer(p1);
                 break;
         }
     }
@@ -64,6 +64,21 @@ public class TurnMaker : MonoBehaviour
             }
             yield return new WaitForSeconds(1);
         }
+    }
+
+    public void EnablePlayer(GameObject player)
+    {
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<PlayAnim>().enabled = true;
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+    }
+
+
+    public void DisablePlayer(GameObject player)
+    {
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayAnim>().enabled = false;
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
 
 

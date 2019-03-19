@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("Enter ground");
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Player")
         {
             isGrounded = true;
         }
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D col)
     {
         Debug.Log("Leave ground");
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Player")
         {
             isGrounded = false;
         }

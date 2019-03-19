@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\MainMenuLaunching.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />
+    <Compile Include="Assets\Scripts\PlayAnim.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />

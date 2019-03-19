@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.6025524
+      value: -2.774
       objectReference: {fileID: 0}
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.67
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.z
@@ -191,6 +191,19 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9770ea5387f6e5d4eb6b8a6ff98f2d5a,
         type: 3}
+    - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.6756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.3229775
+      objectReference: {fileID: 0}
+    - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
   m_IsPrefabAsset: 0
@@ -1698,7 +1711,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.17, y: 0.16}
+    oldSize: {x: 0.15, y: 0.13}
     newSize: {x: 0.32617188, y: 0.36523438}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1706,11 +1719,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.085, y: 0.08}
-      - {x: -0.085, y: -0.06}
-      - {x: -0.074999996, y: -0.08}
-      - {x: 0.085, y: -0.08}
-      - {x: 0.085, y: 0.08}
+    - - {x: -0.074999996, y: 0.065}
+      - {x: -0.074999996, y: -0.065}
+      - {x: 0.074999996, y: -0.065}
+      - {x: 0.074999996, y: 0.065}
 --- !u!114 &847553159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,6 +1739,42 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
+--- !u!114 &847553163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847553157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4a00e0e02a4d646b48fa33755b70d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  isIdle: 0
+  isGrounded: 0
+  facingRight: 1
+  walk: CatWalk
+  idle: CatIdle
+  jump: CatJump
+--- !u!95 &847553164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847553157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6bc0baaac461f0142b9137e33ce463f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &923549160
 Prefab:
   m_ObjectHideFlags: 0
@@ -1817,11 +1865,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.96
+      value: -1.663
       objectReference: {fileID: 0}
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.726
+      value: -1.564
       objectReference: {fileID: 0}
     - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1860,7 +1908,7 @@ Prefab:
     - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766052432246836, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_Name
@@ -1873,14 +1921,27 @@ Prefab:
     - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_Mass
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212573300294915668, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8337057fda0af2646a80ea401b788620,
+      objectReference: {fileID: 21300000, guid: efa8d3766bb0cec46a3f0ed2b50dd1df,
         type: 3}
+    - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.5616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019517002230980, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.5837576
+      objectReference: {fileID: 0}
+    - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
   m_IsPrefabAsset: 0
@@ -1889,6 +1950,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1766052432246836, guid: db3fff2a2f18a4d408299a7005049237,
     type: 2}
   m_PrefabInternal: {fileID: 389805}
+--- !u!114 &973467642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973467641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4a00e0e02a4d646b48fa33755b70d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  isIdle: 0
+  isGrounded: 0
+  facingRight: 1
+  walk: GarfieldWalk
+  idle: GarfieldIdle
+  jump: GarfieldJump
+--- !u!95 &973467643
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973467641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9814f170ed474d1459176c7fd8377dee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!60 &973467645
 PolygonCollider2D:
   m_ObjectHideFlags: 0
