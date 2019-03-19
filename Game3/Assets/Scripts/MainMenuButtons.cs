@@ -15,12 +15,12 @@ public class MainMenuButtons : MonoBehaviour
     public Button backA;
     public Slider slider;
 
-    public GameObject options;
+    //public GameObject options;
     public GameObject mainStuff;
     public GameObject controlsStuff;
 
     void Start () {
-        options.gameObject.SetActive(false);
+        //options.gameObject.SetActive(false);
         controlsStuff.gameObject.SetActive(false);
         slider.value = 0.5f;
     }
@@ -29,9 +29,9 @@ public class MainMenuButtons : MonoBehaviour
 		
         startB.onClick.AddListener(StartGame);
         controls.onClick.AddListener(OpenControls);
-        optionsB.onClick.AddListener(OpenOptions);
+        //optionsB.onClick.AddListener(OpenOptions);
         exitB.onClick.AddListener(QuitGame);
-        back.onClick.AddListener(GoBack);
+        //back.onClick.AddListener(GoBack);
         backA.onClick.AddListener(GoBackA);
         AudioListener.volume = slider.value;
 
@@ -47,11 +47,11 @@ public class MainMenuButtons : MonoBehaviour
         Application.Quit();
     }
 
-    void OpenOptions()
-    {
-        mainStuff.gameObject.SetActive(false);
-        options.gameObject.SetActive(true);
-    }
+    //void OpenOptions()
+    //{
+    //    mainStuff.gameObject.SetActive(false);
+    //    options.gameObject.SetActive(true);
+    //}
 
     void OpenControls()
     {
@@ -59,11 +59,11 @@ public class MainMenuButtons : MonoBehaviour
         controlsStuff.gameObject.SetActive(true);
     }
 
-    void GoBack()
-    {
-        options.gameObject.SetActive(false);
-        mainStuff.gameObject.SetActive(true);
-    }
+    //void GoBack()
+    //{
+    //    options.gameObject.SetActive(false);
+    //    mainStuff.gameObject.SetActive(true);
+    //}
 
     void GoBackA()
     {

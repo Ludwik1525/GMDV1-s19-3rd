@@ -415,6 +415,8 @@ MonoBehaviour:
   moveHorizontal: 0
   isGrounded: 0
   keyFunctionOpen: 0
+  source: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!114 &114381960137000330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,6 +432,8 @@ MonoBehaviour:
   playerPos: {fileID: 4420271892066762}
   directionPos: {fileID: 4177438194339944}
   powerModifier: 2
+  source: {fileID: 0}
+  shoot: {fileID: 0}
 --- !u!114 &114454068516329702
 MonoBehaviour:
   m_ObjectHideFlags: 1

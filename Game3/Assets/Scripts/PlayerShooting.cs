@@ -14,8 +14,10 @@ public class PlayerShooting : MonoBehaviour {
     bool shooting = false;
 
     private TurnMaker turnMaker;
-    
-	void Start () {
+    public AudioSource source;
+    public AudioClip shoot;
+
+    void Start () {
         rightRotation = new Vector3(0, 0, 1.75f);
         leftRotation = new Vector3(0, 0, -1.75f);
         turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
@@ -57,6 +59,7 @@ public class PlayerShooting : MonoBehaviour {
             power = 0;
             shooting = false;
             turnMaker.end = true;
+            source.PlayOneShot(shoot);
         }
     }
 

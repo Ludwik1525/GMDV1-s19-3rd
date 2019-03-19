@@ -72,6 +72,7 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerShooting>().enabled = true;
         player.GetComponent<PlayAnim>().enabled = true;
+        player.GetComponent<PlayAnim>().isIdle = false;
     }
 
 
@@ -81,5 +82,6 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
+        player.GetComponent<PlayAnim>().isIdle = true;
     }
 }

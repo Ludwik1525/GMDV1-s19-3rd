@@ -463,7 +463,6 @@ MonoBehaviour:
   back: {fileID: 504168931}
   backA: {fileID: 1143521548}
   slider: {fileID: 489167225}
-  options: {fileID: 2034842802}
   mainStuff: {fileID: 1629412496}
   controlsStuff: {fileID: 201033984}
 --- !u!1 &89865552
@@ -687,7 +686,7 @@ MonoBehaviour:
 
     Arrow up/down --- aim
 
-    Enter --------------- shoot
+    Q -------------------- shoot
 
     Spacebar ---------- jump
 
@@ -713,7 +712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &201033985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1121,7 +1120,7 @@ Animator:
   m_GameObject: {fileID: 536688553}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 020954d64b92ab0458d0e7783abfeee7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3be9e980712fd4247a9edfe885fe68f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1421,7 +1420,7 @@ Animator:
   m_GameObject: {fileID: 616008548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c5181a7ce3d3ccf4692b4d2bc4de7803, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb3d91e442fa6ed42b2d7780a73e9d44, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1975,7 +1974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804586235
 RectTransform:
   m_ObjectHideFlags: 0

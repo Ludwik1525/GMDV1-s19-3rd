@@ -7,6 +7,7 @@ TagManager:
   - Player2
   - Ground
   - HP
+  - Bckg
   layers:
   - Default
   - TransparentFX
