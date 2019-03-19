@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayAnim : MonoBehaviour {
 
     public Animator anim;
+    private PlayerMovement playerMovement;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     //a bool for determining whether the player is already in idle state or not
@@ -26,60 +28,61 @@ public class PlayAnim : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (playerMovement.keyFunctionOpen == true)
         {
-            if (!facingRight)
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Flip();
+                if (!facingRight)
+                {
+                    Flip();
+                }
+
+                facingRight = true;
             }
 
-            facingRight = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (facingRight)
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                Flip();
+                if (facingRight)
+                {
+                    Flip();
+                }
+
+                facingRight = false;
             }
 
-            facingRight = false;
-        }
-
-        if (isGrounded)
-        {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            if (isGrounded)
             {
-                anim.Play(walk);
-            }
+                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    anim.Play(walk);
+                }
 
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                anim.Play(walk);
-            }
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    anim.Play(walk);
+                }
 
-            if (Input.GetKey(KeyCode.Space))
-            {
-                anim.Play(jump);
-            }
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    anim.Play(jump);
+                }
 
-            if (!Input.anyKey)
-            {
+                if (!Input.anyKey)
+                {
                     anim.Play(idle);
+                }
             }
-        }
-        else
-        {
-            anim.Play(idle);
-        }
+            else
+            {
+                anim.Play(idle);
+            }
 
-
-	}
+        }
+    }
     
     void Flip()
     {
-        facingRight = !facingRight;
+ //       facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;

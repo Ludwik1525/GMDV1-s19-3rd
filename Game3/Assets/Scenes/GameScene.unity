@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: P0
       objectReference: {fileID: 0}
+    - target: {fileID: 114659162633413312, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 973467641}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
   m_IsPrefabAsset: 0
@@ -1769,6 +1774,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
+  keyFunctionOpen: 0
 --- !u!114 &847553163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,8 +2035,19 @@ Prefab:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 114659162633413312, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 847553157}
+    - target: {fileID: 114659162633413312, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: facingRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
+    - {fileID: 114659162633413312, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &973467641 stripped
