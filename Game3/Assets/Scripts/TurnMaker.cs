@@ -70,7 +70,6 @@ public class TurnMaker : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayAnim>().enabled = true;
-        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
 
@@ -78,8 +77,5 @@ public class TurnMaker : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
-        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
-
-
 }

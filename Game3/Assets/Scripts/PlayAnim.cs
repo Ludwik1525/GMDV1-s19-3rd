@@ -52,29 +52,21 @@ public class PlayAnim : MonoBehaviour {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 anim.Play(walk);
-                isIdle = false;
             }
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 anim.Play(walk);
-                isIdle = false;
             }
 
             if (Input.GetKey(KeyCode.Space))
             {
                 anim.Play(jump);
-                isIdle = false;
             }
 
             if (!Input.anyKey)
             {
-                if (!isIdle)
-                {
                     anim.Play(idle);
-                }
-
-                isIdle = true;
             }
         }
         else
@@ -110,4 +102,5 @@ public class PlayAnim : MonoBehaviour {
             isGrounded = false;
         }
     }
+
 }

@@ -8,9 +8,9 @@ public class Winner : MonoBehaviour
 {
     public GameObject winningStuff;
     public Button exit;
-    public Text red;
+    public Text green;
     public Text blue;
-    public bool redWon = false;
+    public bool greenWon = false;
     public GameObject pauseStuff;
     public GameObject counter;
     public bool hasGameEnded = false;
@@ -26,14 +26,14 @@ public class Winner : MonoBehaviour
             counter.gameObject.SetActive(false);
             Time.timeScale = 0.0f;
             winningStuff.gameObject.SetActive(true);
-            if (redWon)
+            if (greenWon)
             {
-                red.gameObject.SetActive(true);
+                green.gameObject.SetActive(true);
                 blue.gameObject.SetActive(false);
             }
             else
             {
-                red.gameObject.SetActive(false);
+                green.gameObject.SetActive(false);
                 blue.gameObject.SetActive(true);
             }
         }

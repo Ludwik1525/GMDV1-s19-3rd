@@ -1106,9 +1106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winningStuff: {fileID: 680571093}
   exit: {fileID: 224387238}
-  red: {fileID: 1102888311}
+  green: {fileID: 1102888311}
   blue: {fileID: 1856860592}
-  redWon: 0
+  greenWon: 0
   pauseStuff: {fileID: 1827116537}
   counter: {fileID: 1202060473}
   hasGameEnded: 0
@@ -1908,7 +1908,7 @@ Prefab:
     - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1766052432246836, guid: db3fff2a2f18a4d408299a7005049237, type: 2}
       propertyPath: m_Name
@@ -1921,7 +1921,7 @@ Prefab:
     - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_Mass
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 212573300294915668, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
@@ -1940,6 +1940,21 @@ Prefab:
     - target: {fileID: 50539942937477134, guid: db3fff2a2f18a4d408299a7005049237,
         type: 2}
       propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212573300294915668, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.9879209
+      objectReference: {fileID: 0}
+    - target: {fileID: 212573300294915668, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212573300294915668, guid: db3fff2a2f18a4d408299a7005049237,
+        type: 2}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2071,7 +2086,7 @@ GameObject:
   - component: {fileID: 1102888312}
   - component: {fileID: 1102888311}
   m_Layer: 5
-  m_Name: Red
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2107,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7921569, b: 0.04966656, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2127,7 +2142,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: R E D
+  m_Text: G R E E N
 --- !u!222 &1102888312
 CanvasRenderer:
   m_ObjectHideFlags: 0
