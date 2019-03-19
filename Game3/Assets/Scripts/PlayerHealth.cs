@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
+	[SerializeField]private TeamHealth teamHealth;
 	private Canvas _canvas;
 	private Text _hp;
-	private int _hpNumber;
-	public GameObject user;
+	private Rigidbody2D user;
+	private float playerHp;
 	private GameObject canvasObject;
 	private RectTransform rectTranny;
 
@@ -17,24 +18,34 @@ public class PlayerHealth : MonoBehaviour {
 	void Awake()
 	{
 		print("Awake");
-		_hpNumber = 100;
+		playerHp = 100;
 	}
 	// Use this for initialization
 	void Start () {
-		print("Start");
-		user = GetComponent<GameObject>();
-		print(user);
-		AddCanvasAndText();
+		print("Start playerHealth");
+		user = GetComponent<Rigidbody2D>();
+		playerHp = 100f;
+		print(playerHp + this.name);
+		
+				
 	}
 
-	void AddCanvasAndText()
-	{
-		print("addCanvasReached");
-		if(user){
-			print("Hey");
-			print(user.GetComponent<GameObject>());
-		}
+	void update(){
+		print("got to the update");
+	}	
+
+	public float getPlayerHp(){
+		return playerHp;
 	}
-	
+	public void setPlayerHp(float value){
+		playerHp = value;
+		
+	}
+
+	private void adjustHpText()
+	{
+		Transform tranny = this.transform;
+		
+	}
 	
 }
