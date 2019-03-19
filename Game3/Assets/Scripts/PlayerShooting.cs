@@ -12,20 +12,30 @@ public class PlayerShooting : MonoBehaviour {
     Vector3 rightRotation, leftRotation;
     Vector2 shootVector;
     bool shooting = false;
+
+    private TurnMaker turnMaker;
     
 	void Start () {
-        rightRotation = new Vector3(0, 0, 1);
-        leftRotation = new Vector3(0, 0, -1);
-	}
+        rightRotation = new Vector3(0, 0, 1.75f);
+        leftRotation = new Vector3(0, 0, -1.75f);
+        turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
+    }
 	
 	void Update () {
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            playerPos.Rotate(rightRotation);
+            if(playerPos.transform.rotation.z < 0.7)
+            {
+                playerPos.Rotate(rightRotation);
+            }
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            playerPos.Rotate(leftRotation);
+            if(playerPos.transform.rotation.z > -0.45)
+            {
+                playerPos.Rotate(leftRotation);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -46,6 +56,7 @@ public class PlayerShooting : MonoBehaviour {
             bulletBody.velocity = shootVector * power;
             power = 0;
             shooting = false;
+            turnMaker.end = true;
         }
     }
 

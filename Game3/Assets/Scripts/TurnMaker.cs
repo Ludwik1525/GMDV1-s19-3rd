@@ -15,7 +15,7 @@ public class TurnMaker : MonoBehaviour
 
     public Text counter;
     public float tourTime;
-    private bool end = false;
+    public bool end = false;
     private int currentP = 0;
 
     void Start()
@@ -70,6 +70,7 @@ public class TurnMaker : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().keyFunctionOpen = true;
         player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<PlayerShooting>().enabled = true;
         player.GetComponent<PlayAnim>().enabled = true;
     }
 
@@ -78,6 +79,7 @@ public class TurnMaker : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().keyFunctionOpen = false;
         player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
     }
 }
