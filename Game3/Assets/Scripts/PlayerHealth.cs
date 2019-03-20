@@ -13,26 +13,23 @@ public class PlayerHealth : MonoBehaviour {
 	private float playerHp;
 	private GameObject canvasObject;
 	private RectTransform rectTranny;
-	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;
-    
-    private TurnMaker turnMaker;
+	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;    
+  
     private string teamColor;
     //Using awake to set the health number on the player prefabs
     void Awake()
-	{
-		
+	{		
 		playerHp = 100;
 	}
 
 	// Use this for initialization
 	void Start () {
 
-        turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
-        teamColor = turnMaker.GetColor();
+        
         user = GetComponent<Rigidbody2D>();
 		playerHp = 100f;
 		checkTeam();
-		takeDmg(50);
+		takeDmg(30);
 		// setSizeOfHpBar();
 		
 	}
@@ -40,6 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 	void update(){
 
         //check to see if the player is out of bounds
+		
     }	
 
     public void takeDmg(float dmg)
@@ -51,13 +49,19 @@ public class PlayerHealth : MonoBehaviour {
 		else{
 
 		 camHealthbar = _team.Find("HealthbarBlue").GetComponent<Transform>();
-		}
-        
-		teamHealth = camHealthbar.GetComponent<TeamHealth>();		
+		}        
+		teamHealth = camHealthbar.GetComponent<TeamHealth>();
+		if(playerHp - dmg < 0){
+			playerHp = 0f;
+		}else{
+
         playerHp -= dmg;
+		}
+
         Debug.Log(playerHp);
 		teamHealth.setSize(dmg);
 		setSizeOfHpBar();
+		isDead();
     }
 
 	public float getPlayerHp(){
@@ -96,13 +100,26 @@ public class PlayerHealth : MonoBehaviour {
 		return false;
 	}
 
-	// bool isDead(){
-	// 	if(playerHp <= 0 || outOfBounds){
-	// 		return true;
+	// //health pickup
+	// void OnCollisionEnter(Collision collision)
+    // {
+	// 	GameObject hpKit;
+	// 	if(collision.collider.name == "HP"){
+	// 		takeDmg(-25);
+	// 		print("inside col");
+	// 		hpKit = collision.gameObject.GetComponent<GameObject>();
+	// 		print("inside col" + hpKit.name);
 	// 	}
-
-	// 	return false;
 	// }
+	//only checks if hp is 0 or under, should also check for out of bounds
+	bool isDead(){
+		if(playerHp <= 0){
+			this.gameObject.SetActive(false);
+			return true;
+		}
+
+		return false;
+	}
 
 	// bool OnTheMap(Transform playerTrans){
 

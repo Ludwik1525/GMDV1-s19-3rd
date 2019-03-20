@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+     <Compile Include="Assets\Scripts\collscript.cs" />
      <Compile Include="Assets\Scripts\HPSpawner.cs" />
      <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
      <Compile Include="Assets\Scripts\MainMenuLaunching.cs" />
