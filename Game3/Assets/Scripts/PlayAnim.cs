@@ -38,6 +38,7 @@ public class PlayAnim : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
+                isIdle = false;
                 if (!facingRight)
                 {
                     Flip();
@@ -48,6 +49,7 @@ public class PlayAnim : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                isIdle = false;
                 if (facingRight)
                 {
                     Flip();
@@ -56,22 +58,26 @@ public class PlayAnim : MonoBehaviour {
                 facingRight = false;
             }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isIdle = false;
+                anim.Play(jump);
+            }
+
             if (isGrounded)
             {
                 if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
                 {
+                    isIdle = false;
                     anim.Play(walk);
                 }
 
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
+                    isIdle = false;
                     anim.Play(walk);
                 }
 
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    anim.Play(jump);
-                }
 
                 if (!Input.anyKey)
                 {

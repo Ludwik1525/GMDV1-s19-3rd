@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShooting.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\SpawnPlayers.cs" />
     <Compile Include="Assets\Scripts\TeamHealth.cs" />
     <Compile Include="Assets\Scripts\TurnMaker.cs" />
     <Compile Include="Assets\Scripts\Winner.cs" />
