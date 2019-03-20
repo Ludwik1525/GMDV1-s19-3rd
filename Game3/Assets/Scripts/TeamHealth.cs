@@ -6,12 +6,14 @@ public class TeamHealth : MonoBehaviour {
 
 	
 	[SerializeField]private PlayerHealth playerHealth;
-	private Transform bar;
+	public Transform bar;
 	private float _totalHpFirst,_totalHp;
 
     private TurnMaker turnMaker;
-    private string teamColor;
-	
+    public string teamColor;
+
+    public float HP;
+
 	void Awake(){
 		//these variables are just to simulate round 2
 		_totalHpFirst = 200;
@@ -29,6 +31,7 @@ public class TeamHealth : MonoBehaviour {
     void Update()
     {
         teamColor = turnMaker.GetColor();
+        HP = _totalHp;
     }
 	//Sets the size of the bar gameobject which is representing the healthbar of the teams
 	//method should perhaps be called setHealth

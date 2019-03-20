@@ -14,12 +14,26 @@ public class Winner : MonoBehaviour
     public GameObject pauseStuff;
     public GameObject counter;
     public bool hasGameEnded = false;
+    private TeamHealth teamHealth;
 
-    void Start () {
+    void Start ()
+    {
+        teamHealth = GetComponent<TeamHealth>();
     }
 	
 	void Update () {
-		
+        
+        if (teamHealth.HP < 10f && teamHealth.teamColor == "Green")
+        {
+            hasGameEnded = true;
+            greenWon = true;
+        }
+        else if(teamHealth.HP < 10f && teamHealth.teamColor == "Blue")
+        {
+            hasGameEnded = true;
+            greenWon = false;
+        }
+
         if (hasGameEnded)
         {
             pauseStuff.gameObject.SetActive(false);
@@ -36,6 +50,8 @@ public class Winner : MonoBehaviour
                 green.gameObject.SetActive(false);
                 blue.gameObject.SetActive(true);
             }
+
+            hasGameEnded = false;
         }
 
         exit.onClick.AddListener(BackToMenu);
