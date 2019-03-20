@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Text.RegularExpressions;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -13,10 +12,9 @@ public class PlayerHealth : MonoBehaviour {
 	private float playerHp;
 	private GameObject canvasObject;
 	private RectTransform rectTranny;
-	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;
+	private Transform _healtBarTransform,_teamHealthbar, _team;
     
     private TurnMaker turnMaker;
-	
     private string teamColor;
     //Using awake to set the health number on the player prefabs
     void Awake()
@@ -32,8 +30,8 @@ public class PlayerHealth : MonoBehaviour {
         teamColor = turnMaker.GetColor();
         user = GetComponent<Rigidbody2D>();
 		playerHp = 100f;
-		checkTeam();
-		// takeDmg(50);
+		
+		takeDmg(50, teamColor);
 		// setSizeOfHpBar();
 		
 	}
@@ -43,18 +41,10 @@ public class PlayerHealth : MonoBehaviour {
         teamColor = turnMaker.GetColor();
     }	
 
-    public void takeDmg(float dmg)
+    public void takeDmg(float dmg, string teamColor)
     {
 		_team = transform.Find("/Main Camera").GetComponent<Transform>();
-		
-		if(checkTeam()){
-
-		 camHealthbar = _team.Find("HealthbarGreen").GetComponent<Transform>();
-		}
-		else {
-			camHealthbar = _team.Find("HealthbarBlue").GetComponent<Transform>();
-		}	
-		
+		Transform camHealthbar = _team.Find("Healthbar"+teamColor).GetComponent<Transform>();
         
 		teamHealth = camHealthbar.GetComponent<TeamHealth>();		
         playerHp -= dmg;
@@ -72,31 +62,10 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void setSizeOfHpBar(){
-		Transform bar;
-		// print(this.name + "hey there");
-		// if(checkTeam()){
-		// }		
-		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("HealthbarPlayer");
-		// _healtBarTransform = GameObject.FindGameObjectWithTag("HealthbarPlayer").transform;
-		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");
-		// bar = GameObject.FindGameObjectWithTag("Bar").transform;
-		print(bar.name);		
+		Transform bar;		
+		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("Healthbar"+teamColor);
+		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");		
 		bar.localScale = new Vector3(playerHp/100, 1f);
-	}
-
-	//returns true if playernumber is uneven
-	public bool checkTeam(){
-		 int team;
-		string playerName = this.name;
-		string resultString = Regex.Match(playerName, @"\d+").Value;
-		int.TryParse(resultString,out team);
-		
-		if(team % 2 == 1){
-			return true;
-		}
-
-		
-		return false;
 	}
 	
 }

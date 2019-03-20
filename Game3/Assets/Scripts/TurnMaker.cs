@@ -29,13 +29,12 @@ public class TurnMaker : MonoBehaviour
 
     void Update()
     {
-        print(teamColor  + "teamcolor in turnmaker");
         if (end)
         {
             StopAllCoroutines();
             counter.color = Color.white;
             counter.text = "" + (tourTime+1);
-            StartCoroutine(Counter(tourTime, counter));            
+            StartCoroutine(Counter(tourTime, counter));
             currentP++;
             end = false;
         }

@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour {
             if (c.gameObject.CompareTag("Player"))
             {
                 float distance = Vector2.Distance(transform.position, c.transform.position);
-                c.GetComponent<PlayerHealth>().takeDmg(dmg/distance);
+                c.GetComponent<PlayerHealth>().takeDmg(dmg/distance, teamColor);
             }
         }
         Destroy(gameObject);

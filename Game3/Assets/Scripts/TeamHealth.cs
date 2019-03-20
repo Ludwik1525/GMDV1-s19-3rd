@@ -14,17 +14,16 @@ public class TeamHealth : MonoBehaviour {
 	
 	void Awake(){
 		//these variables are just to simulate round 2
-		_totalHpFirst = 300;
-		_totalHp = 300;
+		_totalHpFirst = 200;
+		_totalHp = 0;
         turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
-        
-		
+        teamColor = turnMaker.GetColor();
     }
 	// Use this for initialization
 	void Start ()
     {
-        
-        // setTotalHp(teamColor);
+        print(teamColor + "this weird");
+        setTotalHp(teamColor);
     }
 
     void Update()
@@ -43,8 +42,9 @@ public class TeamHealth : MonoBehaviour {
 		
 	}	
 	
-	public void setTotalHp(){
-       
+	public void setTotalHp(string teamColor){
+        print(teamColor +"teamcolor");
+                print(transform.Find("/Team" + teamColor).GetComponent<Transform>());
 		Transform teamTrans = transform.Find("/Team" + teamColor).GetComponent<Transform>();		
 			foreach(Transform playertrans in teamTrans){
 				
