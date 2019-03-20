@@ -13,10 +13,11 @@ public class PlayerHealth : MonoBehaviour {
 	private GameObject canvasObject;
 	private RectTransform rectTranny;
 	private Transform _healtBarTransform,_teamHealthbar, _team;
-
-
-	//Using awake to set the health number on the player prefabs
-	void Awake()
+    
+    private TurnMaker turnMaker;
+    private string teamColor;
+    //Using awake to set the health number on the player prefabs
+    void Awake()
 	{
 		
 		playerHp = 100;
@@ -24,24 +25,27 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		user = GetComponent<Rigidbody2D>();
+
+        turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
+        teamColor = turnMaker.GetColor();
+        user = GetComponent<Rigidbody2D>();
 		playerHp = 100f;
-		print(playerHp + this.name);
-		takeDmg(50);
+		
+		takeDmg(50, teamColor);
 		// setSizeOfHpBar();
 		
 	}
 
 	void update(){
-		
-	}	
 
-    public void takeDmg(float dmg)
+        teamColor = turnMaker.GetColor();
+    }	
+
+    public void takeDmg(float dmg, string teamColor)
     {
-		
 		_team = transform.Find("/Main Camera").GetComponent<Transform>();
-		Transform camHealthbar = _team.Find("Healthbar").GetComponent<Transform>();
+		Transform camHealthbar = _team.Find("Healthbar"+teamColor).GetComponent<Transform>();
+        
 		teamHealth = camHealthbar.GetComponent<TeamHealth>();		
         playerHp -= dmg;
         Debug.Log(playerHp);
@@ -59,7 +63,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void setSizeOfHpBar(){
 		Transform bar;		
-		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("HealthbarPlayer");
+		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("Healthbar"+teamColor);
 		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");		
 		bar.localScale = new Vector3(playerHp/100, 1f);
 	}

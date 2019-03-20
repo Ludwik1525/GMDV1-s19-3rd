@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
 
 public class TurnMaker : MonoBehaviour
@@ -8,15 +9,17 @@ public class TurnMaker : MonoBehaviour
 
     public GameObject p0;
     public GameObject p1;
-    //public GameObject p2;
-    //public GameObject p3;
-    //public GameObject p4;
-    //public GameObject p5;
+    public GameObject p2;
+    public GameObject p3;
+    public GameObject p4;
+    public GameObject p5;
 
     public Text counter;
     public float tourTime;
     public bool end = false;
     private int currentP = 0;
+
+    public string teamColor;
 
     void Start()
     {
@@ -36,15 +39,61 @@ public class TurnMaker : MonoBehaviour
             end = false;
         }
 
-        switch (currentP%2)
+        switch (currentP%6)
         {
             case 0:
                 EnablePlayer(p0);
                 DisablePlayer(p1);
+                DisablePlayer(p2);
+                DisablePlayer(p3);
+                DisablePlayer(p4);
+                DisablePlayer(p5);
+                teamColor = "Blue";
                 break;
             case 1:
-                DisablePlayer(p0);
                 EnablePlayer(p1);
+                DisablePlayer(p0);
+                DisablePlayer(p2);
+                DisablePlayer(p3);
+                DisablePlayer(p4);
+                DisablePlayer(p5);
+                teamColor = "Green";
+                break;
+            case 2:
+                EnablePlayer(p2);
+                DisablePlayer(p1);
+                DisablePlayer(p0);
+                DisablePlayer(p3);
+                DisablePlayer(p4);
+                DisablePlayer(p5);
+                teamColor = "Blue";
+                break;
+            case 3:
+                EnablePlayer(p3);
+                DisablePlayer(p1);
+                DisablePlayer(p2);
+                DisablePlayer(p0);
+                DisablePlayer(p4);
+                DisablePlayer(p5);
+                teamColor = "Green";
+                break;
+            case 4:
+                EnablePlayer(p4);
+                DisablePlayer(p1);
+                DisablePlayer(p2);
+                DisablePlayer(p3);
+                DisablePlayer(p0);
+                DisablePlayer(p5);
+                teamColor = "Blue";
+                break;
+            case 5:
+                EnablePlayer(p5);
+                DisablePlayer(p1);
+                DisablePlayer(p2);
+                DisablePlayer(p3);
+                DisablePlayer(p4);
+                DisablePlayer(p0);
+                teamColor = "Green";
                 break;
         }
     }
@@ -83,5 +132,10 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
         player.GetComponent<PlayAnim>().isIdle = true;
+    }
+
+    public string GetColor()
+    {
+        return teamColor;
     }
 }

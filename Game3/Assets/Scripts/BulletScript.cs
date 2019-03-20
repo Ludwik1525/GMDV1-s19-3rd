@@ -7,15 +7,20 @@ public class BulletScript : MonoBehaviour {
     public float radius;
     public float dmg;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private TurnMaker turnMaker;
+    private string teamColor;
+    // Use this for initialization
+    void Start () {
+
+        turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
+        teamColor = turnMaker.GetColor();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        teamColor = turnMaker.GetColor();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,7 +30,7 @@ public class BulletScript : MonoBehaviour {
             if (c.gameObject.CompareTag("Player"))
             {
                 float distance = Vector2.Distance(transform.position, c.transform.position);
-                c.GetComponent<PlayerHealth>().takeDmg(dmg/distance);
+                c.GetComponent<PlayerHealth>().takeDmg(dmg/distance, teamColor);
             }
         }
         Destroy(gameObject);

@@ -8,20 +8,28 @@ public class TeamHealth : MonoBehaviour {
 	[SerializeField]private PlayerHealth playerHealth;
 	private Transform bar;
 	private float _totalHpFirst,_totalHp;
-	
-	
+
+    private TurnMaker turnMaker;
+    private string teamColor;
 	
 	void Awake(){
 		//these variables are just to simulate round 2
 		_totalHpFirst = 200;
 		_totalHp = 0;
-		
-	}
+        turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
+        teamColor = turnMaker.GetColor();
+    }
 	// Use this for initialization
-	void Start () {
-		setTotalHp();
-	}
+	void Start ()
+    {
+        print(teamColor + "this weird");
+        setTotalHp(teamColor);
+    }
 
+    void Update()
+    {
+        teamColor = turnMaker.GetColor();
+    }
 	//Sets the size of the bar gameobject which is representing the healthbar of the teams
 	//method should perhaps be called setHealth
 	public void setSize(float dmg)
@@ -34,8 +42,10 @@ public class TeamHealth : MonoBehaviour {
 		
 	}	
 	
-	public void setTotalHp(){		
-		Transform teamTrans = transform.Find("/Team").GetComponent<Transform>();		
+	public void setTotalHp(string teamColor){
+        print(teamColor +"teamcolor");
+                print(transform.Find("/Team" + teamColor).GetComponent<Transform>());
+		Transform teamTrans = transform.Find("/Team" + teamColor).GetComponent<Transform>();		
 			foreach(Transform playertrans in teamTrans){
 				
 				//maybe make check to see if found player is "active"
