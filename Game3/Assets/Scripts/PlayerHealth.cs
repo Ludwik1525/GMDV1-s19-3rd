@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void update(){
-
+		isDead();
         //check to see if the player is out of bounds
 		
     }	
@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour {
         Debug.Log(playerHp);
 		teamHealth.setSize(dmg);
 		setSizeOfHpBar();
-		isDead();
+		
     }
 
 	public float getPlayerHp(){
@@ -112,13 +112,16 @@ public class PlayerHealth : MonoBehaviour {
 	// 	}
 	// }
 	//only checks if hp is 0 or under, should also check for out of bounds
-	bool isDead(){
-		if(playerHp <= 0){
+	void isDead(){
+		print("check started");
+		if(playerHp <= 0 || this.transform.position.y <=-225){
+			print(this.transform.name);
+			playerHp = 0;
 			this.gameObject.SetActive(false);
-			return true;
+			
 		}
 
-		return false;
+		
 	}
 
 	// bool OnTheMap(Transform playerTrans){

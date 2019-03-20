@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class collscript : MonoBehaviour {
 
+	[SerializeField]PlayerHealth playerhp;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,12 +16,14 @@ public class collscript : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(Collision other){
-		GameObject player;
-		print("in coll");
+	void OnCollisionEnter2D(Collision2D other){
+		Transform player;
+		
 		if(other.collider.CompareTag("Player")){
-			player = other.gameObject.GetComponent<GameObject>();
-			print(player.name);
+			player = other.gameObject.GetComponent<Transform>();
+			playerhp = player.GetComponent<PlayerHealth>();
+			playerhp.takeDmg(-25);
+			gameObject.SetActive(false);
 		}
 	}
 }
