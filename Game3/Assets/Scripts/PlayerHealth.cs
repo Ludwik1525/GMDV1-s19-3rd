@@ -29,7 +29,8 @@ public class PlayerHealth : MonoBehaviour {
 		playerHp = 100f;
 		print(playerHp + this.name);
 		takeDmg(50);
-		setSizeOfHpBar();
+		// setSizeOfHpBar();
+		
 	}
 
 	void update(){
@@ -45,6 +46,7 @@ public class PlayerHealth : MonoBehaviour {
         playerHp -= dmg;
         Debug.Log(playerHp);
 		teamHealth.setSize(dmg);
+		setSizeOfHpBar();
     }
 
 	public float getPlayerHp(){
@@ -56,6 +58,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void setSizeOfHpBar(){
+		print(this.transform.name);
 		Transform bar;		
 		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("HealthbarPlayer");
 		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");		
