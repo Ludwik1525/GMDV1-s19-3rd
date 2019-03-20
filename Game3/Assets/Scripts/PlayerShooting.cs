@@ -57,7 +57,7 @@ public class PlayerShooting : MonoBehaviour {
             if(!hasShot)
             {
                 StopCoroutine("ShootingRoutine");
-                GameObject bulletShot = Instantiate(bullet, (Vector2) transform.position + (shootVector * 0.6f),
+                GameObject bulletShot = Instantiate(bullet, (Vector2) transform.position + (shootVector * 2f),
                     transform.rotation);
                 Rigidbody2D bulletBody = bulletShot.GetComponent<Rigidbody2D>();
                 bulletBody.velocity = shootVector * power;

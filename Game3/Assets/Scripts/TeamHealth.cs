@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TeamHealth : MonoBehaviour {
 
@@ -12,9 +14,17 @@ public class TeamHealth : MonoBehaviour {
     private TurnMaker turnMaker;
     public string teamColor;
 
-    public float HP;
+    public GameObject winningStuff;
+    public Button exit;
+    public Text green;
+    public Text blue;
+    public bool greenWon = false;
+    public GameObject pauseStuff;
+    public GameObject counter;
+    public bool hasGameEnded = false;
+    private TeamHealth teamHealth;
 
-	void Awake(){
+    void Awake(){
 		//these variables are just to simulate round 2
 		_totalHpFirst = 200;
 		_totalHp = 0;
@@ -31,7 +41,6 @@ public class TeamHealth : MonoBehaviour {
     void Update()
     {
         teamColor = turnMaker.GetColor();
-        HP = _totalHp;
     }
 	//Sets the size of the bar gameobject which is representing the healthbar of the teams
 	//method should perhaps be called setHealth
@@ -41,8 +50,22 @@ public class TeamHealth : MonoBehaviour {
 		float relation = 0;	
 		_totalHp -= dmg;		
 		relation = _totalHp/_totalHpFirst;
-		bar.localScale = new Vector3((relation), 1f);			
-		
+		bar.localScale = new Vector3((relation), 1f);
+        if (_totalHp<= 0)
+        {
+            pauseStuff.gameObject.SetActive(false);
+            counter.gameObject.SetActive(false);
+            Time.timeScale = 0.0f;
+            winningStuff.gameObject.SetActive(true);
+            
+            green.gameObject.SetActive(teamColor=="Blue");
+            blue.gameObject.SetActive(teamColor=="Green");
+            
+
+            hasGameEnded = false;
+
+            exit.onClick.AddListener(BackToMenu);
+        }
 	}	
 	
 	public void setTotalHp(string teamColor){
@@ -64,5 +87,11 @@ public class TeamHealth : MonoBehaviour {
 			_totalHpFirst = _totalHp;		
 
 	}
-	
+
+    void BackToMenu()
+    {
+        SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1.0f;
+    }
+
 }

@@ -23,12 +23,12 @@ public class Winner : MonoBehaviour
 	
 	void Update () {
         
-        if (teamHealth.HP < 10f && teamHealth.teamColor == "Green")
+        if (teamHealth.bar.localScale.x <= 0 && teamHealth.teamColor == "Green")
         {
             hasGameEnded = true;
             greenWon = true;
         }
-        else if(teamHealth.HP < 10f && teamHealth.teamColor == "Blue")
+        else if(teamHealth.bar.localScale.x <= 0 && teamHealth.teamColor == "Blue")
         {
             hasGameEnded = true;
             greenWon = false;

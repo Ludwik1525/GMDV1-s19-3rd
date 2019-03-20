@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494224545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3285b2d46f6876e438f1c022860939be, type: 3}
   m_Name: 
@@ -2547,6 +2547,36 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.3443396
       objectReference: {fileID: 0}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: winningStuff
+      value: 
+      objectReference: {fileID: 680571093}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: exit
+      value: 
+      objectReference: {fileID: 224387238}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 1102888311}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: blue
+      value: 
+      objectReference: {fileID: 1856860592}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: pauseStuff
+      value: 
+      objectReference: {fileID: 1827116537}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1202060473}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
   m_IsPrefabAsset: 0
@@ -2708,6 +2738,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  bar: {fileID: 0}
+  teamColor: 
+  winningStuff: {fileID: 0}
+  exit: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  greenWon: 0
+  pauseStuff: {fileID: 0}
+  counter: {fileID: 0}
+  hasGameEnded: 0
 --- !u!1 &580078001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,6 +3082,36 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.12878366
       objectReference: {fileID: 0}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: winningStuff
+      value: 
+      objectReference: {fileID: 680571093}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: exit
+      value: 
+      objectReference: {fileID: 224387238}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 1102888311}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: blue
+      value: 
+      objectReference: {fileID: 1856860592}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: pauseStuff
+      value: 
+      objectReference: {fileID: 1827116537}
+    - target: {fileID: 114756008367322962, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1202060473}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
   m_IsPrefabAsset: 0
@@ -4598,6 +4668,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  bar: {fileID: 0}
+  teamColor: 
+  winningStuff: {fileID: 0}
+  exit: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  greenWon: 0
+  pauseStuff: {fileID: 0}
+  counter: {fileID: 0}
+  hasGameEnded: 0
 --- !u!1 &1176363394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4645,6 +4725,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  bar: {fileID: 0}
+  teamColor: 
+  winningStuff: {fileID: 0}
+  exit: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  greenWon: 0
+  pauseStuff: {fileID: 0}
+  counter: {fileID: 0}
+  hasGameEnded: 0
 --- !u!1 &1193289098
 GameObject:
   m_ObjectHideFlags: 0
@@ -7899,6 +7989,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  bar: {fileID: 0}
+  teamColor: 
+  winningStuff: {fileID: 0}
+  exit: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  greenWon: 0
+  pauseStuff: {fileID: 0}
+  counter: {fileID: 0}
+  hasGameEnded: 0
 --- !u!1 &2035634668
 GameObject:
   m_ObjectHideFlags: 0
