@@ -48,10 +48,12 @@ public class PauseGame : MonoBehaviour
     {
         pauseStuff.SetActive(false);
         isPaused = false;
+        Time.timeScale = 1.0f;
     }
 
     void GoToMenu()
     {
         SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1.0f;
     }
 }

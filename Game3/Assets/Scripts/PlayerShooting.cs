@@ -13,6 +13,8 @@ public class PlayerShooting : MonoBehaviour {
     Vector2 shootVector;
     bool shooting = false;
 
+    private bool hasShot = false;
+
     private TurnMaker turnMaker;
     public AudioSource source;
     public AudioClip shoot;
@@ -52,15 +54,28 @@ public class PlayerShooting : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
-            StopCoroutine("ShootingRoutine");
-            GameObject bulletShot = Instantiate(bullet, (Vector2)transform.position + (shootVector * 0.6f), transform.rotation);
-            Rigidbody2D bulletBody = bulletShot.GetComponent<Rigidbody2D>();
-            bulletBody.velocity = shootVector * power;
-            power = 0;
-            shooting = false;
-            turnMaker.end = true;
-            source.PlayOneShot(shoot);
+            if(!hasShot)
+            {
+                StopCoroutine("ShootingRoutine");
+                GameObject bulletShot = Instantiate(bullet, (Vector2) transform.position + (shootVector * 0.6f),
+                    transform.rotation);
+                Rigidbody2D bulletBody = bulletShot.GetComponent<Rigidbody2D>();
+                bulletBody.velocity = shootVector * power;
+                power = 0;
+                shooting = false;
+                source.PlayOneShot(shoot);
+                StartCoroutine(Counter());
+            }
         }
+    }
+
+    public IEnumerator Counter()
+    {
+            hasShot = true;
+            turnMaker.StopAllCoroutines();
+            yield return new WaitForSeconds(2f);
+            turnMaker.end = true;
+            hasShot = false;
     }
 
     private IEnumerator ShootingRoutine()
