@@ -58,7 +58,6 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void setSizeOfHpBar(){
-		print(this.transform.name);
 		Transform bar;		
 		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("HealthbarPlayer");
 		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");		
