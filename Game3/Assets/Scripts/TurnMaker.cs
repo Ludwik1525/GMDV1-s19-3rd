@@ -21,16 +21,22 @@ public class TurnMaker : MonoBehaviour
 
     public string teamColor;
 
+    private GameObject player;
+    private Vector3 offset;
+
     void Start()
     {
         counter.text = "" + (tourTime + 1);
         StartCoroutine(Counter(tourTime, counter));
+
         p0.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
         p1.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
         p2.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
         p3.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
         p4.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
         p5.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+
+        offset = transform.position - player.transform.position;
     }
 
     void Update()
@@ -44,6 +50,7 @@ public class TurnMaker : MonoBehaviour
             currentP++;
             end = false;
         }
+        
 
         switch (currentP%6)
         {
@@ -55,6 +62,7 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p4);
                 DisablePlayer(p5);
                 teamColor = "Blue";
+                player = p0;
                 break;
             case 1:
                 EnablePlayer(p1);
@@ -64,6 +72,7 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p4);
                 DisablePlayer(p5);
                 teamColor = "Green";
+                player = p1;
                 break;
             case 2:
                 EnablePlayer(p2);
@@ -73,6 +82,7 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p4);
                 DisablePlayer(p5);
                 teamColor = "Blue";
+                player = p2;
                 break;
             case 3:
                 EnablePlayer(p3);
@@ -82,6 +92,7 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p4);
                 DisablePlayer(p5);
                 teamColor = "Green";
+                player = p3;
                 break;
             case 4:
                 EnablePlayer(p4);
@@ -91,6 +102,7 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p0);
                 DisablePlayer(p5);
                 teamColor = "Blue";
+                player = p4;
                 break;
             case 5:
                 EnablePlayer(p5);
@@ -100,8 +112,15 @@ public class TurnMaker : MonoBehaviour
                 DisablePlayer(p4);
                 DisablePlayer(p0);
                 teamColor = "Green";
+                player = p5;
                 break;
         }
+    }
+
+
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + new Vector3(offset.x, offset.y, transform.position.z);
     }
 
     public IEnumerator Counter(float t, Text i)
@@ -126,6 +145,7 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerMovement>().keyFunctionOpen = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerShooting>().enabled = true;
+        player.GetComponent<PlayerShooting>().playerPos.gameObject.SetActive(true);
         player.GetComponent<PlayAnim>().enabled = true;
         player.GetComponent<PlayAnim>().isIdle = false;
     }
@@ -135,6 +155,7 @@ public class TurnMaker : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().keyFunctionOpen = false;
         player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerShooting>().playerPos.gameObject.SetActive(false);
         player.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
         player.GetComponent<PlayAnim>().isIdle = true;
@@ -145,3 +166,5 @@ public class TurnMaker : MonoBehaviour
         return teamColor;
     }
 }
+
+
