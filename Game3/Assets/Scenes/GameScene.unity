@@ -2474,70 +2474,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212820194657866194, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 422368859
-      objectReference: {fileID: 0}
-    - target: {fileID: 212820194657866194, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 212685984477049818, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 422368859
-      objectReference: {fileID: 0}
-    - target: {fileID: 212685984477049818, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 212263977195972768, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 422368859
-      objectReference: {fileID: 0}
-    - target: {fileID: 212263977195972768, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427112329053604, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1496665843718206, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
       propertyPath: m_Name
       value: HealthbarGreen
       objectReference: {fileID: 0}
-    - target: {fileID: 4558323891384600, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.099999994
+    - target: {fileID: 1115744848484764, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
+      propertyPath: m_Name
+      value: HealthGreen
       objectReference: {fileID: 0}
-    - target: {fileID: 4558323891384600, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.099999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558323891384600, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.19999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 212685984477049818, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+    - target: {fileID: 224846659635121734, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
         type: 2}
-      propertyPath: m_Color.r
-      value: 0.6965964
+      propertyPath: m_AnchoredPosition.y
+      value: -57.4
       objectReference: {fileID: 0}
-    - target: {fileID: 212685984477049818, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+    - target: {fileID: 224953304207225846, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
         type: 2}
-      propertyPath: m_Color.g
-      value: 1
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212685984477049818, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.3443396
+    - target: {fileID: 1179570531727602, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
+      propertyPath: m_Name
+      value: TeamBarCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
@@ -2700,6 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  healthbarText: {fileID: 0}
 --- !u!1 &580078001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,6 +2979,19 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224953304207225846, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115744848484764, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
+      propertyPath: m_Name
+      value: HealthBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179570531727602, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
+      propertyPath: m_Name
+      value: TeamBarCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
@@ -4604,6 +4575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  healthbarText: {fileID: 0}
 --- !u!1 &1176363394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,6 +4623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  healthbarText: {fileID: 0}
 --- !u!1 &1193289098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,7 +5786,6 @@ RectTransform:
   - {fileID: 680571094}
   - {fileID: 1392090879}
   - {fileID: 1202060474}
-  - {fileID: 1751161042}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6952,81 +6924,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1751161041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1751161042}
-  - component: {fileID: 1751161044}
-  - component: {fileID: 1751161043}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1751161042
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1751161041}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1468343140}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44, y: -21}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1751161043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1751161041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 100%
---- !u!222 &1751161044
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1751161041}
-  m_CullTransparentMesh: 0
 --- !u!1 &1764272516
 GameObject:
   m_ObjectHideFlags: 0
@@ -7918,6 +7815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  healthbarText: {fileID: 0}
 --- !u!1 &2035634668
 GameObject:
   m_ObjectHideFlags: 0

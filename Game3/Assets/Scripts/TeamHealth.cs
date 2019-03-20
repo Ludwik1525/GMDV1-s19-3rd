@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TeamHealth : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class TeamHealth : MonoBehaviour {
 	[SerializeField]private PlayerHealth playerHealth;
 	private Transform bar;
 	private float _totalHpFirst,_totalHp;
+	public Text healthbarText;
 
     private TurnMaker turnMaker;
     private string teamColor;
@@ -36,10 +38,13 @@ public class TeamHealth : MonoBehaviour {
 	public void setSize(float dmg)
 	{		
 		bar = this.transform.Find("Bar");
+		Canvas hpCanvas = this.transform.Find("TeamBarCanvas").GetComponent<Canvas>();
+		healthbarText = hpCanvas.GetComponentInChildren<Text>();
 		float relation = 0;	
 		_totalHp -= dmg;		
 		relation = _totalHp/_totalHpFirst;
 		bar.localScale = new Vector3((relation), 1f);			
+		healthbarText.text = (relation * 100) + "%";
 		
 	}	
 	
