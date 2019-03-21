@@ -8,7 +8,7 @@ public class TeamHealth : MonoBehaviour {
 	
 	[SerializeField]private PlayerHealth playerHealth;
 	private Transform bar;
-	private float _totalHpFirst,_totalHp;
+	private float _totalHpFirst,_totalHp, _relation;
 	public Text healthbarText;
 
     private TurnMaker turnMaker;
@@ -40,21 +40,26 @@ public class TeamHealth : MonoBehaviour {
 		bar = this.transform.Find("Bar");
 		Canvas hpCanvas = this.transform.Find("TeamBarCanvas").GetComponent<Canvas>();
 		healthbarText = hpCanvas.GetComponentInChildren<Text>();
-		float relation = 0;
-		
+				
 		if(_totalHp > _totalHpFirst){
+			print(_totalHpFirst + "inside check");
 			_totalHpFirst = _totalHp;
+			bar.localScale = new Vector3(1f, 1f);
+			healthbarText.text = "100%";
 		}
 		else {
-
+			print(_totalHp + "total");
+		print(_totalHpFirst + "first");
 		_totalHp -= dmg;
+		_relation = _totalHp/_totalHpFirst;
+			print(_relation + "relation after dmg is sent");
+		bar.localScale = new Vector3((_relation), 1f);			
+		healthbarText.text = (_relation * 100) + "%";
+
 		}
 		print(_totalHp + "total");
 		print(_totalHpFirst + "first");
-		relation = _totalHp/_totalHpFirst;
-		print(relation);
-		bar.localScale = new Vector3((relation), 1f);			
-		healthbarText.text = (relation * 100) + "%";
+		print(_relation);
 		
 	}	
 	

@@ -62,6 +62,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	print(dmg);
         Debug.Log(playerHp);
+		print(dmg + "dmg at the end");
 		teamHealth.setSize(dmg);
 		setSizeOfHpBar();
 		
@@ -101,17 +102,18 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 		void isDead(){
-		
 		if(playerHp <= 0){
-			
-			playerHp = 0;
+			//what happens if the player has 150hp?
+			takeDmg(playerHp);
 			this.gameObject.SetActive(false);
 			turnMaker.end = true;
 			
-		}else if(transform.position.y <=-223){
-			playerHp = 0;
-			Debug.Log("hit the bounds");
+		}else if(transform.position.y <=-5){
+			
+			print(playerHp + "playerhp in isdead");
+			takeDmg(playerHp);
 			this.gameObject.SetActive(false);
+
 			turnMaker.end = true;
 		}
 		

@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamHealth: {fileID: 0}
+  turnMaker: {fileID: 0}
 --- !u!114 &114531761402234982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -474,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
-  numberOfPlayers: 0
+  healthbarText: {fileID: 0}
 --- !u!114 &114659162633413312
 MonoBehaviour:
   m_ObjectHideFlags: 1
