@@ -8,17 +8,11 @@ public class PlayerHealth : MonoBehaviour {
 
 	[SerializeField]private TeamHealth teamHealth;
 	[SerializeField] private  TurnMaker turnMaker;
-	private Canvas _canvas;
-	private Text _hp;
 	private Rigidbody2D user;
 	private float playerHp;
-	private GameObject canvasObject;
-	private RectTransform rectTranny;
-	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;
+	private Transform _healtBarTransform,_teamHealthbar, _team, _camHealthbar;
     public bool deadOrNot;
-  
-    private string teamColor;
-    //Using awake to set the health number on the player prefabs
+   
     void Awake()
 	{		
 		playerHp = 100;
@@ -32,9 +26,7 @@ public class PlayerHealth : MonoBehaviour {
         user = GetComponent<Rigidbody2D>();
 		playerHp = 100f;
 		checkTeam();
-		// takeDmg(30);
 		turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
-		// setSizeOfHpBar();
 		
 	}
 
@@ -48,13 +40,13 @@ public class PlayerHealth : MonoBehaviour {
     {
 		_team = transform.Find("/Main Camera").GetComponent<Transform>();
 		if(checkTeam()){
-			 camHealthbar = _team.Find("HealthbarGreen").GetComponent<Transform>();
+			 _camHealthbar = _team.Find("HealthbarGreen").GetComponent<Transform>();
 		}
 		else{
 
-		 camHealthbar = _team.Find("HealthbarBlue").GetComponent<Transform>();
+		 _camHealthbar = _team.Find("HealthbarBlue").GetComponent<Transform>();
 		}        
-		teamHealth = camHealthbar.GetComponent<TeamHealth>();
+		teamHealth = _camHealthbar.GetComponent<TeamHealth>();
 		
 		if(playerHp - dmg < 0){
 			playerHp = 0f;
@@ -62,9 +54,7 @@ public class PlayerHealth : MonoBehaviour {
 
         playerHp -= dmg;
 		}
-	print(dmg);
-        Debug.Log(playerHp);
-		print(dmg + "dmg at the end");
+	
 		teamHealth.setSize(dmg);
 		setSizeOfHpBar();
 		
@@ -72,10 +62,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	public float getPlayerHp(){
 		return playerHp;
-	}
-
-	public void setPlayerHp(float value){
-        playerHp = value;
 	}
 
 	void setSizeOfHpBar(){
@@ -92,8 +78,8 @@ public class PlayerHealth : MonoBehaviour {
 	public bool checkTeam(){
 		 int team;
 		string playerName = this.name;
-		string resultString = Regex.Match(playerName, @"\d+").Value;
-		int.TryParse(resultString,out team);
+		// string resultString = Regex.Match(playerName, @"\d+").Value;
+		int.TryParse(Regex.Match(playerName, @"\d+").Value,out team);
 		
 		if(team % 2 == 1){
 			return true;

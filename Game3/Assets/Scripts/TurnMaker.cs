@@ -44,6 +44,7 @@ public class TurnMaker : MonoBehaviour
             case 0:
                 if (p0.GetComponent<PlayerHealth>().deadOrNot == false)
                 {
+
                     EnablePlayer(p0);
                     DisablePlayer(p1);
                     DisablePlayer(p2);
@@ -170,6 +171,7 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerShooting>().enabled = true;
         player.GetComponent<PlayAnim>().enabled = true;
         player.GetComponent<PlayAnim>().isIdle = false;
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation; 
     }
 
 
@@ -180,6 +182,7 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerShooting>().enabled = false;
         player.GetComponent<PlayAnim>().enabled = false;
         player.GetComponent<PlayAnim>().isIdle = true;
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public string GetColor()
