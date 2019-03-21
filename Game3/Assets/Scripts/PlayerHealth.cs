@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 public class PlayerHealth : MonoBehaviour {
 
 	[SerializeField]private TeamHealth teamHealth;
+	[SerializeField] private  TurnMaker turnMaker;
 	private Canvas _canvas;
 	private Text _hp;
 	private Rigidbody2D user;
@@ -29,12 +30,13 @@ public class PlayerHealth : MonoBehaviour {
         user = GetComponent<Rigidbody2D>();
 		playerHp = 100f;
 		checkTeam();
-		takeDmg(30);
+		// takeDmg(30);
+		turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
 		// setSizeOfHpBar();
 		
 	}
 
-	void update(){
+	void Update(){
 		isDead();
         //check to see if the player is out of bounds
 		
@@ -73,15 +75,12 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void setSizeOfHpBar(){
-				Transform bar;
-		// print(this.name + "hey there");
-		// if(checkTeam()){
-		// }		
+		Transform bar;
+			
 		_healtBarTransform = transform.GetComponentInChildren<Transform>().Find("HealthbarPlayer");
-		// _healtBarTransform = GameObject.FindGameObjectWithTag("HealthbarPlayer").transform;
+		
 		bar = _healtBarTransform.GetComponentInChildren<Transform>().Find("Bar");
-		// bar = GameObject.FindGameObjectWithTag("Bar").transform;
-		print(bar.name);		
+				
 		bar.localScale = new Vector3(playerHp/100, 1f);
 	
 	}
@@ -100,35 +99,21 @@ public class PlayerHealth : MonoBehaviour {
 		return false;
 	}
 
-	// //health pickup
-	// void OnCollisionEnter(Collision collision)
-    // {
-	// 	GameObject hpKit;
-	// 	if(collision.collider.name == "HP"){
-	// 		takeDmg(-25);
-	// 		print("inside col");
-	// 		hpKit = collision.gameObject.GetComponent<GameObject>();
-	// 		print("inside col" + hpKit.name);
-	// 	}
-	// }
-	//only checks if hp is 0 or under, should also check for out of bounds
-	void isDead(){
-		print("check started");
-		if(playerHp <= 0 || this.transform.position.y <=-225){
-			print(this.transform.name);
+		void isDead(){
+		
+		if(playerHp <= 0){
+			
 			playerHp = 0;
 			this.gameObject.SetActive(false);
+			turnMaker.end = true;
 			
+		}else if(transform.position.y <=-223){
+			playerHp = 0;
+			Debug.Log("hit the bounds");
+			this.gameObject.SetActive(false);
+			turnMaker.end = true;
 		}
-
 		
 	}
-
-	// bool OnTheMap(Transform playerTrans){
-
-	// 	if(playerTrans.position < 123 || playerTrans.position > -123){
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
+	
 }

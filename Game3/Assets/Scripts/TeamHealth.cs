@@ -16,8 +16,8 @@ public class TeamHealth : MonoBehaviour {
 	
 	void Awake(){
 		//these variables are just to simulate round 2
-		_totalHpFirst = 300;
-		_totalHp = 300;
+		_totalHpFirst = 0;
+		_totalHp = 0;
         turnMaker = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnMaker>();
         
 		
@@ -26,7 +26,7 @@ public class TeamHealth : MonoBehaviour {
 	void Start ()
     {
         
-        // setTotalHp(teamColor);
+        setTotalHp();
     }
 
     void Update()
@@ -40,8 +40,15 @@ public class TeamHealth : MonoBehaviour {
 		bar = this.transform.Find("Bar");
 		Canvas hpCanvas = this.transform.Find("TeamBarCanvas").GetComponent<Canvas>();
 		healthbarText = hpCanvas.GetComponentInChildren<Text>();
-		float relation = 0;	
-		_totalHp -= dmg;		
+		float relation = 0;
+		print(_totalHpFirst + "first");
+		print(_totalHp + "total");	
+		_totalHp -= dmg;
+		if(_totalHp > _totalHpFirst){
+			_totalHpFirst = _totalHp;
+		}
+		else
+
 		relation = _totalHp/_totalHpFirst;
 		bar.localScale = new Vector3((relation), 1f);			
 		healthbarText.text = (relation * 100) + "%";
@@ -49,9 +56,9 @@ public class TeamHealth : MonoBehaviour {
 	}	
 	
 	public void setTotalHp(){
-       
-		Transform teamTrans = transform.Find("/Team").GetComponent<Transform>();		
-			foreach(Transform playertrans in teamTrans){
+       //Check here if there any active players and go to win scene
+				
+			foreach(Transform playertrans in transform){
 				
 				//maybe make check to see if found player is "active"
 				if(playertrans.CompareTag("Player")){
