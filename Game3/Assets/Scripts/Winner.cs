@@ -20,6 +20,7 @@ public class Winner : MonoBehaviour
 	
 	void Update () {
 		
+
         if (hasGameEnded)
         {
             pauseStuff.gameObject.SetActive(false);

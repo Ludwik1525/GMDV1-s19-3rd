@@ -21,10 +21,20 @@ public class TurnMaker : MonoBehaviour
 
     public string teamColor;
 
+    private GameObject player;
+    private Vector3 offset;
+
     void Start()
     {
         counter.text = "" + (tourTime + 1);
         StartCoroutine(Counter(tourTime, counter));
+
+        p0.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p1.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p2.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p3.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p4.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p5.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
     }
 
     void Update()
@@ -52,6 +62,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p4);
                     DisablePlayer(p5);
                     teamColor = "Blue";
+                    player = p0;
                 }
                 else
                 {
@@ -69,6 +80,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p4);
                     DisablePlayer(p5);
                     teamColor = "Green";
+                    player = p1;
                 }
                 else
                 {
@@ -86,6 +98,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p4);
                     DisablePlayer(p5);
                     teamColor = "Blue";
+                    player = p2;
                 }
                 else
                 {
@@ -103,6 +116,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p4);
                     DisablePlayer(p5);
                     teamColor = "Green";
+                    player = p3;
                 }
                 else
                 {
@@ -120,6 +134,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p0);
                     DisablePlayer(p5);
                     teamColor = "Blue";
+                    player = p4;
                 }
                 else
                 {
@@ -137,6 +152,7 @@ public class TurnMaker : MonoBehaviour
                     DisablePlayer(p4);
                     DisablePlayer(p0);
                     teamColor = "Green";
+                    player = p5;
                 }
                 else
                 {
@@ -145,6 +161,11 @@ public class TurnMaker : MonoBehaviour
 
                 break;
         }
+    }
+
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + new Vector3(offset.x, offset.y, transform.position.z);
     }
 
     public IEnumerator Counter(float t, Text i)
@@ -169,9 +190,10 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerMovement>().keyFunctionOpen = true;
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerShooting>().enabled = true;
+        player.GetComponent<PlayerShooting>().playerPos.gameObject.SetActive(true);
         player.GetComponent<PlayAnim>().enabled = true;
         player.GetComponent<PlayAnim>().isIdle = false;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation; 
+        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation; 
     }
 
 
@@ -180,9 +202,10 @@ public class TurnMaker : MonoBehaviour
         player.GetComponent<PlayerMovement>().keyFunctionOpen = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<PlayerShooting>().enabled = false;
+        player.GetComponent<PlayerShooting>().playerPos.gameObject.SetActive(false);
         player.GetComponent<PlayAnim>().enabled = false;
         player.GetComponent<PlayAnim>().isIdle = true;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public string GetColor()

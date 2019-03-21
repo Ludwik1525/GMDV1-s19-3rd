@@ -2040,7 +2040,7 @@ MonoBehaviour:
   p4: {fileID: 1269966517}
   p5: {fileID: 352600050}
   counter: {fileID: 1202060475}
-  tourTime: 10
+  tourTime: 30
   end: 0
   teamColor: 
 --- !u!114 &494224550
