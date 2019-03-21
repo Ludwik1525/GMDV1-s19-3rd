@@ -1040,7 +1040,6 @@ GameObject:
   - component: {fileID: 352600057}
   - component: {fileID: 352600056}
   - component: {fileID: 352600055}
-  - component: {fileID: 352600054}
   - component: {fileID: 352600053}
   - component: {fileID: 352600052}
   - component: {fileID: 352600058}
@@ -1101,18 +1100,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &352600054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 352600050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &352600055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,7 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -1212,7 +1199,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 5
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -2043,6 +2030,12 @@ MonoBehaviour:
   tourTime: 30
   end: 0
   teamColor: 
+  winningStuff: {fileID: 680571093}
+  exit: {fileID: 224387238}
+  green: {fileID: 1102888311}
+  blue: {fileID: 1856860592}
+  greenWon: 0
+  pauseStuff: {fileID: 1827116537}
 --- !u!114 &494224550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2901,11 +2894,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4334565558568254, guid: 429a921fe789e5546b3978a0486d3c8c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.41
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 4334565558568254, guid: 429a921fe789e5546b3978a0486d3c8c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 4334565558568254, guid: 429a921fe789e5546b3978a0486d3c8c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3536,7 +3529,6 @@ GameObject:
   - component: {fileID: 847553172}
   - component: {fileID: 847553171}
   - component: {fileID: 847553170}
-  - component: {fileID: 847553162}
   - component: {fileID: 847553161}
   - component: {fileID: 847553160}
   - component: {fileID: 847553158}
@@ -3608,18 +3600,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &847553162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 847553157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &847553166
 Rigidbody2D:
   serializedVersion: 4
@@ -3633,7 +3613,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -3718,7 +3698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -3902,7 +3882,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.16
+      value: 9.859
       objectReference: {fileID: 0}
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3935,6 +3915,10 @@ Prefab:
     - target: {fileID: 1393825078708274, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 21.031359
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
@@ -4052,7 +4036,6 @@ GameObject:
   - component: {fileID: 973467647}
   - component: {fileID: 973467646}
   - component: {fileID: 973467645}
-  - component: {fileID: 973467644}
   - component: {fileID: 973467643}
   - component: {fileID: 973467642}
   - component: {fileID: 973467648}
@@ -4096,18 +4079,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &973467644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973467641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &973467645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4121,7 +4092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -4717,11 +4688,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4990922555357032, guid: 3bb44200a6bef1d45ab16902c74109c7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.04
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 4990922555357032, guid: 3bb44200a6bef1d45ab16902c74109c7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.77
+      value: -1.84
       objectReference: {fileID: 0}
     - target: {fileID: 4990922555357032, guid: 3bb44200a6bef1d45ab16902c74109c7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5133,7 +5104,6 @@ GameObject:
   - component: {fileID: 1269966524}
   - component: {fileID: 1269966523}
   - component: {fileID: 1269966522}
-  - component: {fileID: 1269966521}
   - component: {fileID: 1269966520}
   - component: {fileID: 1269966519}
   - component: {fileID: 1269966525}
@@ -5194,18 +5164,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &1269966521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1269966517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1269966522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5219,7 +5177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -5305,7 +5263,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -5580,11 +5538,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.453935
+      value: -15.52
       objectReference: {fileID: 0}
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.4072618
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5612,7 +5570,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4839936988592096, guid: 20ec3f39c510bf7418d00771837ab540, type: 2}
       propertyPath: m_LocalScale.x
-      value: 7.239999
+      value: 11.171318
       objectReference: {fileID: 0}
     - target: {fileID: 212024795595225792, guid: 20ec3f39c510bf7418d00771837ab540,
         type: 2}
@@ -5691,11 +5649,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4536204532318274, guid: 95f9f958a7983dc44b0c2e4b56bb7d41, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.23
+      value: -14.41
       objectReference: {fileID: 0}
     - target: {fileID: 4536204532318274, guid: 95f9f958a7983dc44b0c2e4b56bb7d41, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 4536204532318274, guid: 95f9f958a7983dc44b0c2e4b56bb7d41, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7110,7 +7068,6 @@ GameObject:
   - component: {fileID: 1652056177}
   - component: {fileID: 1652056176}
   - component: {fileID: 1652056175}
-  - component: {fileID: 1652056174}
   - component: {fileID: 1652056173}
   - component: {fileID: 1652056172}
   - component: {fileID: 1652056178}
@@ -7171,18 +7128,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &1652056174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1652056170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1652056175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7196,7 +7141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -7282,7 +7227,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -8445,7 +8390,6 @@ GameObject:
   - component: {fileID: 2035634675}
   - component: {fileID: 2035634674}
   - component: {fileID: 2035634673}
-  - component: {fileID: 2035634672}
   - component: {fileID: 2035634671}
   - component: {fileID: 2035634670}
   - component: {fileID: 2035634676}
@@ -8506,18 +8450,6 @@ MonoBehaviour:
   powerModifier: 2
   source: {fileID: 302383597}
   shoot: {fileID: 8300000, guid: e617b883c1438324b9ee83452bd002f9, type: 3}
---- !u!114 &2035634672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114021746558322460, guid: db3fff2a2f18a4d408299a7005049237,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035634668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2035634673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8531,7 +8463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 45
+  jumpHeight: 80
   movement: {x: 0, y: 0}
   moveHorizontal: 0
   isGrounded: 0
@@ -8617,7 +8549,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -8946,11 +8878,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4617324703323376, guid: e1c3fb09af65a8d4d85481f75f97384a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.7614279
+      value: -4.81
       objectReference: {fileID: 0}
     - target: {fileID: 4617324703323376, guid: e1c3fb09af65a8d4d85481f75f97384a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.2267582
+      value: -2.97
       objectReference: {fileID: 0}
     - target: {fileID: 4617324703323376, guid: e1c3fb09af65a8d4d85481f75f97384a, type: 2}
       propertyPath: m_LocalPosition.z

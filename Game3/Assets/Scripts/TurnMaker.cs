@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TurnMaker : MonoBehaviour
@@ -23,6 +24,13 @@ public class TurnMaker : MonoBehaviour
 
     private GameObject player;
     private Vector3 offset;
+
+    public GameObject winningStuff;
+    public UnityEngine.UI.Button exit;
+    public Text green;
+    public Text blue;
+    public bool greenWon = false;
+    public GameObject pauseStuff;
 
     void Start()
     {
@@ -54,7 +62,6 @@ public class TurnMaker : MonoBehaviour
             case 0:
                 if (p0.GetComponent<PlayerHealth>().deadOrNot == false)
                 {
-
                     EnablePlayer(p0);
                     DisablePlayer(p1);
                     DisablePlayer(p2);
@@ -66,7 +73,7 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP+=2;
                 }
 
                 break;
@@ -84,7 +91,7 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP += 2;
                 }
 
                 break;
@@ -102,7 +109,7 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP += 2;
                 }
 
                 break;
@@ -120,7 +127,7 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP += 2;
                 }
 
                 break;
@@ -138,7 +145,7 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP += 2;
                 }
 
                 break;
@@ -156,11 +163,37 @@ public class TurnMaker : MonoBehaviour
                 }
                 else
                 {
-                    currentP++;
+                    currentP += 2;
                 }
 
                 break;
         }
+
+        if ((p0.GetComponent<PlayerHealth>().deadOrNot&& p2.GetComponent<PlayerHealth>().deadOrNot&& p4.GetComponent<PlayerHealth>().deadOrNot)||(p1.GetComponent<PlayerHealth>().deadOrNot&& p3.GetComponent<PlayerHealth>().deadOrNot&& p5.GetComponent<PlayerHealth>().deadOrNot))
+        {
+            if ((p0.GetComponent<PlayerHealth>().deadOrNot && p2.GetComponent<PlayerHealth>().deadOrNot &&
+                 p4.GetComponent<PlayerHealth>().deadOrNot))
+            {
+                greenWon = true;
+            }
+
+            pauseStuff.gameObject.SetActive(false);
+            counter.gameObject.SetActive(false);
+            Time.timeScale = 0.0f;
+            winningStuff.gameObject.SetActive(true);
+            if (greenWon)
+            {
+                green.gameObject.SetActive(true);
+                blue.gameObject.SetActive(false);
+            }
+            else
+            {
+                green.gameObject.SetActive(false);
+                blue.gameObject.SetActive(true);
+            }
+        }
+
+        exit.onClick.AddListener(BackToMenu);
     }
 
     void LateUpdate()
@@ -211,5 +244,12 @@ public class TurnMaker : MonoBehaviour
     public string GetColor()
     {
         return teamColor;
+    }
+
+
+    void BackToMenu()
+    {
+        SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1.0f;
     }
 }
