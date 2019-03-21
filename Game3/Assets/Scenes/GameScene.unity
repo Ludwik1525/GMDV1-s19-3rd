@@ -1149,9 +1149,9 @@ MonoBehaviour:
   isIdle: 0
   isGrounded: 0
   facingRight: 1
-  walk: CatWalk
-  idle: CatIdle
-  jump: CatJump
+  walk: HKWalk
+  idle: HKIdle
+  jump: HKIdle
 --- !u!95 &352600057
 Animator:
   serializedVersion: 3
@@ -1162,7 +1162,7 @@ Animator:
   m_GameObject: {fileID: 352600050}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6bc0baaac461f0142b9137e33ce463f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6bd68239b5fb216489f8d1adcb0f0176, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1187,7 +1187,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.12}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.32617188, y: 0.36523438}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1256,7 +1256,7 @@ SpriteRenderer:
   m_SortingLayerID: 759670905
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: efa8d3766bb0cec46a3f0ed2b50dd1df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0ac497f02df6624b9a4110e0b2a2b3f, type: 3}
   m_Color: {r: 0.6424137, g: 1, b: 0.08962262, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2388,7 +2388,7 @@ Prefab:
     - target: {fileID: 224846659635121734, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -57.4
+      value: -71.2
       objectReference: {fileID: 0}
     - target: {fileID: 224953304207225846, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
         type: 2}
@@ -2398,6 +2398,11 @@ Prefab:
     - target: {fileID: 1179570531727602, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
       propertyPath: m_Name
       value: TeamBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 224846659635121734, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
@@ -3140,6 +3145,16 @@ Prefab:
     - target: {fileID: 1179570531727602, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
       propertyPath: m_Name
       value: TeamBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 224846659635121734, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 224846659635121734, guid: 56db6a3f5edeb764e88bd3c8ffc20029,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 18.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56db6a3f5edeb764e88bd3c8ffc20029, type: 2}
@@ -5227,9 +5242,9 @@ MonoBehaviour:
   isIdle: 0
   isGrounded: 0
   facingRight: 1
-  walk: CatWalk
-  idle: CatIdle
-  jump: CatJump
+  walk: HKWalk
+  idle: HKIdle
+  jump: HKIdle
 --- !u!95 &1269966524
 Animator:
   serializedVersion: 3
@@ -5240,7 +5255,7 @@ Animator:
   m_GameObject: {fileID: 1269966517}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6bc0baaac461f0142b9137e33ce463f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6bd68239b5fb216489f8d1adcb0f0176, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5265,7 +5280,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.12}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.32617188, y: 0.36523438}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5334,7 +5349,7 @@ SpriteRenderer:
   m_SortingLayerID: 759670905
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: efa8d3766bb0cec46a3f0ed2b50dd1df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0ac497f02df6624b9a4110e0b2a2b3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

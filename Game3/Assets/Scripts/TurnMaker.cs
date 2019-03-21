@@ -29,12 +29,12 @@ public class TurnMaker : MonoBehaviour
         counter.text = "" + (tourTime + 1);
         StartCoroutine(Counter(tourTime, counter));
 
-        p0.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
-        p1.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
-        p2.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
-        p3.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
-        p4.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
-        p5.transform.position = new Vector2(Random.Range(-30.0f, 30.0f), 4);
+        p0.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
+        p1.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
+        p2.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
+        p3.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
+        p4.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
+        p5.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
     }
 
     void Update()
