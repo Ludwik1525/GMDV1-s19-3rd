@@ -115,7 +115,7 @@ public class PlayerHealth : MonoBehaviour {
 			print(playerHp + "playerhp in isdead");
 			takeDmg(playerHp);
 			this.gameObject.SetActive(false);
-
+            deadOrNot = true;
 			turnMaker.end = true;
 		}
 		
