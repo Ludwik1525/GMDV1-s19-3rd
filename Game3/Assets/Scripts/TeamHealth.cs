@@ -60,37 +60,34 @@ public class TeamHealth : MonoBehaviour {
 	
 	public void setTotalHp(){
        //Check here if there any active players and go to win scene
-				// print(transform.name);
-				
-				string teamBlue = "Blue";
-				string teamGreen = "Green";
-				string team = "Team";
-				string teamColor = transform.name.Substring(9);
-				
-			//solution is to move the script to the camera 
+				// print(transform.name);				
+				Transform teamTrans;
+				string team = "";
+				string teamColor = transform.name;
+				  team =lookForTeam(teamColor.Substring(9));
+				  print(team );
+				 
+					  teamTrans = GameObject.Find(team).GetComponent<Transform>();
+					  foreach(Transform playertrans in teamTrans){
+						  if(playertrans.CompareTag("Player")){
 
-				
-			// foreach(Transform playertrans in transform){
-				
-			// 	//maybe make check to see if found player is "active"
-			// 	if(playertrans.CompareTag("Player")){
-			// 		print(playertrans.name + "player tranny");
-			// 	playerHealth = playertrans.GetComponent<PlayerHealth>();				
+					print(playertrans.name + "player tranny");
+				playerHealth = playertrans.GetComponent<PlayerHealth>();				
 					
-			// 	_totalHp += playerHealth.getPlayerHp();	
-					
-			// 	}
+				_totalHp += playerHealth.getPlayerHp();	
 
-			// }
-			print(_totalHp);
-			print(_totalHpFirst);
-			_totalHpFirst = _totalHp;		
+				}
+				
+			
+					  }		
+			
+			_totalHpFirst = _totalHp;
 
 	}
-	//you just need to use this method to determine the current team name
-	//then you have to use this method in "SettotalHp" so that the method can see what team healthbar to manipulate
-	public string lookForTeam(string teamColor){
-		if(teamColor == "Blue"){
+	
+	public string lookForTeam(string input){
+		
+		if(input == "Blue"){
 			return "TeamBlue";
 		}else {
 			return "TeamGreen";
