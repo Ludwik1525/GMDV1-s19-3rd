@@ -104,14 +104,23 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 		void isDead(){
-		if(playerHp <= 0 ||transform.position.y <=-5){
-			//what happens if the player has 150hp?
-			takeDmg(playerHp);
-			this.gameObject.SetActive(false);
-			// turnMaker.end = true;
-            deadOrNot = true;
-			
-		}
+
+		bool isActive = transform.GetComponent<PlayerMovement>().isActiveAndEnabled;
+			if(playerHp <= 0 || transform.position.y <=-5 && !isActive){
+				//what happens if the player has 150hp?
+				takeDmg(playerHp);
+				this.gameObject.SetActive(false);
+				// turnMaker.end = true;
+				deadOrNot = true;
+				
+			}
+			else if (playerHp <= 0 || transform.position.y <=-5 && isActive){
+				takeDmg(playerHp);
+				this.gameObject.SetActive(false);
+				// turnMaker.end = true;
+				deadOrNot = true;
+				turnMaker.end = true;
+			}
 		}
 		
 	}
