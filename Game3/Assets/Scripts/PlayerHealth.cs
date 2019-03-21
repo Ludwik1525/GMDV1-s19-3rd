@@ -53,13 +53,14 @@ public class PlayerHealth : MonoBehaviour {
 		 camHealthbar = _team.Find("HealthbarBlue").GetComponent<Transform>();
 		}        
 		teamHealth = camHealthbar.GetComponent<TeamHealth>();
+		
 		if(playerHp - dmg < 0){
 			playerHp = 0f;
 		}else{
 
         playerHp -= dmg;
 		}
-
+	print(dmg);
         Debug.Log(playerHp);
 		teamHealth.setSize(dmg);
 		setSizeOfHpBar();

@@ -41,14 +41,16 @@ public class TeamHealth : MonoBehaviour {
 		Canvas hpCanvas = this.transform.Find("TeamBarCanvas").GetComponent<Canvas>();
 		healthbarText = hpCanvas.GetComponentInChildren<Text>();
 		float relation = 0;
-		print(_totalHpFirst + "first");
-		print(_totalHp + "total");	
-		_totalHp -= dmg;
+		
 		if(_totalHp > _totalHpFirst){
 			_totalHpFirst = _totalHp;
 		}
-		else
+		else {
 
+		_totalHp -= dmg;
+		}
+		print(_totalHp + "total");
+		print(_totalHpFirst + "first");
 		relation = _totalHp/_totalHpFirst;
 		bar.localScale = new Vector3((relation), 1f);			
 		healthbarText.text = (relation * 100) + "%";
@@ -57,12 +59,12 @@ public class TeamHealth : MonoBehaviour {
 	
 	public void setTotalHp(){
        //Check here if there any active players and go to win scene
-				
+				// print(transform.name);
 			foreach(Transform playertrans in transform){
 				
 				//maybe make check to see if found player is "active"
 				if(playertrans.CompareTag("Player")){
-			
+					print(playertrans);
 				playerHealth = playertrans.GetComponent<PlayerHealth>();				
 					
 				_totalHp += playerHealth.getPlayerHp();	
@@ -70,6 +72,8 @@ public class TeamHealth : MonoBehaviour {
 				}
 
 			}
+			print(_totalHp);
+			print(_totalHpFirst);
 			_totalHpFirst = _totalHp;		
 
 	}
