@@ -14,14 +14,16 @@ public class PlayerHealth : MonoBehaviour {
 	private float playerHp;
 	private GameObject canvasObject;
 	private RectTransform rectTranny;
-	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;    
+	private Transform _healtBarTransform,_teamHealthbar, _team, camHealthbar;
+    public bool deadOrNot;
   
     private string teamColor;
     //Using awake to set the health number on the player prefabs
     void Awake()
 	{		
 		playerHp = 100;
-	}
+        deadOrNot = false;
+    }
 
 	// Use this for initialization
 	void Start () {

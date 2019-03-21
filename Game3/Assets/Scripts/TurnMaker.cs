@@ -42,58 +42,106 @@ public class TurnMaker : MonoBehaviour
         switch (currentP%6)
         {
             case 0:
-                EnablePlayer(p0);
-                DisablePlayer(p1);
-                DisablePlayer(p2);
-                DisablePlayer(p3);
-                DisablePlayer(p4);
-                DisablePlayer(p5);
-                teamColor = "Blue";
+                if (p0.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p0);
+                    DisablePlayer(p1);
+                    DisablePlayer(p2);
+                    DisablePlayer(p3);
+                    DisablePlayer(p4);
+                    DisablePlayer(p5);
+                    teamColor = "Blue";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
             case 1:
-                EnablePlayer(p1);
-                DisablePlayer(p0);
-                DisablePlayer(p2);
-                DisablePlayer(p3);
-                DisablePlayer(p4);
-                DisablePlayer(p5);
-                teamColor = "Green";
+                if (p1.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p1);
+                    DisablePlayer(p0);
+                    DisablePlayer(p2);
+                    DisablePlayer(p3);
+                    DisablePlayer(p4);
+                    DisablePlayer(p5);
+                    teamColor = "Green";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
             case 2:
-                EnablePlayer(p2);
-                DisablePlayer(p1);
-                DisablePlayer(p0);
-                DisablePlayer(p3);
-                DisablePlayer(p4);
-                DisablePlayer(p5);
-                teamColor = "Blue";
+                if (p2.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p2);
+                    DisablePlayer(p1);
+                    DisablePlayer(p0);
+                    DisablePlayer(p3);
+                    DisablePlayer(p4);
+                    DisablePlayer(p5);
+                    teamColor = "Blue";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
             case 3:
-                EnablePlayer(p3);
-                DisablePlayer(p1);
-                DisablePlayer(p2);
-                DisablePlayer(p0);
-                DisablePlayer(p4);
-                DisablePlayer(p5);
-                teamColor = "Green";
+                if (p3.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p3);
+                    DisablePlayer(p1);
+                    DisablePlayer(p2);
+                    DisablePlayer(p0);
+                    DisablePlayer(p4);
+                    DisablePlayer(p5);
+                    teamColor = "Green";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
             case 4:
-                EnablePlayer(p4);
-                DisablePlayer(p1);
-                DisablePlayer(p2);
-                DisablePlayer(p3);
-                DisablePlayer(p0);
-                DisablePlayer(p5);
-                teamColor = "Blue";
+                if (p4.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p4);
+                    DisablePlayer(p1);
+                    DisablePlayer(p2);
+                    DisablePlayer(p3);
+                    DisablePlayer(p0);
+                    DisablePlayer(p5);
+                    teamColor = "Blue";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
             case 5:
-                EnablePlayer(p5);
-                DisablePlayer(p1);
-                DisablePlayer(p2);
-                DisablePlayer(p3);
-                DisablePlayer(p4);
-                DisablePlayer(p0);
-                teamColor = "Green";
+                if (p5.GetComponent<PlayerHealth>().deadOrNot == false)
+                {
+                    EnablePlayer(p5);
+                    DisablePlayer(p1);
+                    DisablePlayer(p2);
+                    DisablePlayer(p3);
+                    DisablePlayer(p4);
+                    DisablePlayer(p0);
+                    teamColor = "Green";
+                }
+                else
+                {
+                    currentP++;
+                }
+
                 break;
         }
     }
