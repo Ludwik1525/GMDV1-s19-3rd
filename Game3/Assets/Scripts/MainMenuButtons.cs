@@ -22,24 +22,26 @@ public class MainMenuButtons : MonoBehaviour
     void Start () {
         //options.gameObject.SetActive(false);
         controlsStuff.gameObject.SetActive(false);
-        slider.value = 0.5f;
-    }
-	
-	void Update () {
-		
+        slider.value = 0.5f;        
         startB.onClick.AddListener(StartGame);
         controls.onClick.AddListener(OpenControls);
         //optionsB.onClick.AddListener(OpenOptions);
         exitB.onClick.AddListener(QuitGame);
         //back.onClick.AddListener(GoBack);
         backA.onClick.AddListener(GoBackA);
-        AudioListener.volume = slider.value;
+        
+    }
+	
+	void Update () {
+		
 
+        AudioListener.volume = slider.value;
     }
 
     void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(1);
+        // SceneManager.LoadScene("GameScene");
     }
 
     void QuitGame()

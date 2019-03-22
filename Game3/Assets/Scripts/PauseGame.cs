@@ -18,12 +18,12 @@ public class PauseGame : MonoBehaviour
 		pauseStuff.gameObject.SetActive(false);
         sliderMusic.value = 0.5f;
         sliderSounds.value = 0.5f;
+        resume.onClick.AddListener(Resume);
+        menu.onClick.AddListener(GoToMenu);
 }
 	
 	void Update () {
 
-        resume.onClick.AddListener(Resume);
-        menu.onClick.AddListener(GoToMenu);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -51,7 +51,7 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    void GoToMenu()
+   void GoToMenu()
     {
         SceneManager.LoadScene("StartScene");
         Time.timeScale = 1.0f;

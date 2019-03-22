@@ -8,8 +8,10 @@ public class MainMenuLaunching : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         menuStuff.gameObject.SetActive(false);
         StartCoroutine(Counter(3.5f));
+        
     }
 
     void Update()

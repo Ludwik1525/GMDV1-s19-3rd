@@ -71,8 +71,9 @@ public class PlayerShooting : MonoBehaviour {
 
     public IEnumerator Counter()
     {
+            
         hasShot = true;
-        turnMaker.StopAllCoroutines();
+        turnMaker.StopCoroutine("Counter");
         yield return new WaitForSeconds(2f);
         turnMaker.end = true;
         hasShot = false;

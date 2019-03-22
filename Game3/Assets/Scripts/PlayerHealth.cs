@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour {
 				//what happens if the player has 150hp?
 				takeDmg(playerHp);
                 Instantiate(explosion, transform.position, Quaternion.identity);
-                StartCoroutine(Counter());
+                //StartCoroutine(Counter());
                 source.PlayOneShot(expl);
             this.gameObject.SetActive(false);
 				// turnMaker.end = true;
@@ -111,7 +111,7 @@ public class PlayerHealth : MonoBehaviour {
 			else if (playerHp <= 0 || transform.position.y <=-5 && isActive){
 				takeDmg(playerHp);
                 Instantiate(explosion, transform.position, Quaternion.identity);
-                StartCoroutine(Counter());
+                //StartCoroutine(Counter());
                 source.PlayOneShot(expl);
             this.gameObject.SetActive(false);
 				// turnMaker.end = true;
@@ -120,15 +120,17 @@ public class PlayerHealth : MonoBehaviour {
         }
 		}
 
-        public IEnumerator Counter()
+        public void Counter()
         {
             GameObject[] explosions = new GameObject[5];
             explosions = GameObject.FindGameObjectsWithTag("Explosion");
-        yield return new WaitForSeconds(2f);
+	
+		
         foreach (GameObject explosion in explosions)
         {
             Destroy(explosion);
         }
+		
     }
 
 }

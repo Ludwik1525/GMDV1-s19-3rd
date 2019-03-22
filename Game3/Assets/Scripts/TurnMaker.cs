@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class TurnMaker : MonoBehaviour
 {
@@ -26,11 +26,12 @@ public class TurnMaker : MonoBehaviour
     private Vector3 offset;
 
     public GameObject winningStuff;
-    public UnityEngine.UI.Button exit;
+    public Button exit;
     public Text green;
     public Text blue;
     public bool greenWon = false;
     public GameObject pauseStuff;
+    public PauseGame pauseGame;
 
     void Start()
     {
@@ -43,16 +44,20 @@ public class TurnMaker : MonoBehaviour
         p3.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
         p4.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
         p5.transform.position = new Vector2(Random.Range(-20.0f, 20.0f), 4);
-    }
 
-    void Update()
-    {
+        
+        exit.onClick.AddListener(BackToMenu);
+    }
+    void Update(){
+
+    
         if (end)
         {
             StopAllCoroutines();
             counter.color = Color.white;
             counter.text = "" + (tourTime+1);
             StartCoroutine(Counter(tourTime, counter));
+            player.GetComponent<PlayerHealth>().Counter();
             currentP++;
             end = false;
         }
@@ -179,21 +184,14 @@ public class TurnMaker : MonoBehaviour
 
             pauseStuff.gameObject.SetActive(false);
             counter.gameObject.SetActive(false);
-            Time.timeScale = 0.0f;
             winningStuff.gameObject.SetActive(true);
-            if (greenWon)
-            {
-                green.gameObject.SetActive(true);
-                blue.gameObject.SetActive(false);
-            }
-            else
-            {
-                green.gameObject.SetActive(false);
-                blue.gameObject.SetActive(true);
-            }
+            
+                green.gameObject.SetActive(greenWon);
+                blue.gameObject.SetActive(!greenWon);
+           
+            Time.timeScale = 0.0f;
         }
 
-        exit.onClick.AddListener(BackToMenu);
     }
 
     void LateUpdate()
@@ -214,7 +212,7 @@ public class TurnMaker : MonoBehaviour
             {
                 end = true;
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -245,7 +243,6 @@ public class TurnMaker : MonoBehaviour
     {
         return teamColor;
     }
-
 
     void BackToMenu()
     {

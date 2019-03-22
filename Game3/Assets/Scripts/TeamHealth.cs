@@ -42,24 +42,19 @@ public class TeamHealth : MonoBehaviour {
 		healthbarText = hpCanvas.GetComponentInChildren<Text>();
 				
 		if(_totalHp > _totalHpFirst){
-			print(_totalHpFirst + "inside check");
 			_totalHpFirst = _totalHp;
 			bar.localScale = new Vector3(1f, 1f);
 			healthbarText.text = "100%";
 		}
 		else {
-			print(_totalHp + "total");
-		print(_totalHpFirst + "first");
+
 		_totalHp -= dmg;
-		_relation = _totalHp/_totalHpFirst;
-			print(_relation + "relation after dmg is sent");
+		_relation = _totalHp/_totalHpFirst;			
 		bar.localScale = new Vector3((_relation), 1f);			
 		healthbarText.text = (_relation * 100) + "%";
 
 		}
-		print(_totalHp + "total");
-		print(_totalHpFirst + "first");
-		print(_relation);
+		
 		
 	}	
 	
@@ -68,15 +63,14 @@ public class TeamHealth : MonoBehaviour {
 				// print(transform.name);				
 				Transform teamTrans;
 				string team = "";
-				string teamColor = transform.name;
-				  team =lookForTeam(teamColor.Substring(9));
-				  print(team );
+				
+				  team =lookForTeam(transform.name.Substring(9));				
 				 
 					  teamTrans = GameObject.Find(team).GetComponent<Transform>();
 					  foreach(Transform playertrans in teamTrans){
 						  if(playertrans.CompareTag("Player")){
 
-					print(playertrans.name + "player tranny");
+					
 				playerHealth = playertrans.GetComponent<PlayerHealth>();				
 					
 				_totalHp += playerHealth.getPlayerHp();	
