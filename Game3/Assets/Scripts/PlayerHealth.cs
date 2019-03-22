@@ -12,7 +12,12 @@ public class PlayerHealth : MonoBehaviour {
 	private float playerHp;
 	private Transform _healtBarTransform,_teamHealthbar, _team, _camHealthbar;
     public bool deadOrNot;
-   
+
+    public GameObject explosion;
+
+    public AudioSource source;
+    public AudioClip expl;
+
     void Awake()
 	{		
 		playerHp = 100;
@@ -95,20 +100,37 @@ public class PlayerHealth : MonoBehaviour {
 			if(playerHp <= 0 || transform.position.y <=-5 && !isActive){
 				//what happens if the player has 150hp?
 				takeDmg(playerHp);
-				this.gameObject.SetActive(false);
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                StartCoroutine(Counter());
+                source.PlayOneShot(expl);
+            this.gameObject.SetActive(false);
 				// turnMaker.end = true;
 				deadOrNot = true;
-				
-			}
+
+        }
 			else if (playerHp <= 0 || transform.position.y <=-5 && isActive){
 				takeDmg(playerHp);
-				this.gameObject.SetActive(false);
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                StartCoroutine(Counter());
+                source.PlayOneShot(expl);
+            this.gameObject.SetActive(false);
 				// turnMaker.end = true;
 				deadOrNot = true;
 				turnMaker.end = true;
-			}
+        }
 		}
-		
-	}
+
+        public IEnumerator Counter()
+        {
+            GameObject[] explosions = new GameObject[5];
+            explosions = GameObject.FindGameObjectsWithTag("Explosion");
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject explosion in explosions)
+        {
+            Destroy(explosion);
+        }
+    }
+
+}
 	
 

@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - HP
   - Bckg
+  - Explosion
   layers:
   - Default
   - TransparentFX

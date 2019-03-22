@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  dmg: 0.5
+  dmg: 12
 --- !u!212 &212945790966007696
 SpriteRenderer:
   m_ObjectHideFlags: 1

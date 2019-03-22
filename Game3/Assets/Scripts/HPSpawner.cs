@@ -11,7 +11,7 @@ public class HPSpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Counter(Random.Range(30.0f, 100.0f)));
+        StartCoroutine(Counter(Random.Range(10.0f, 30.0f)));
     }
 
     void Update()
@@ -19,7 +19,7 @@ public class HPSpawner : MonoBehaviour
         if (finished)
         {
             StopAllCoroutines();
-            StartCoroutine(Counter(Random.Range(30.0f, 100.0f)));
+            StartCoroutine(Counter(Random.Range(10.0f, 30.0f)));
             finished = false;
         }
     }
@@ -41,6 +41,6 @@ public class HPSpawner : MonoBehaviour
 
     void SpawnObject()
     {
-        Instantiate(HP, new Vector2(Random.Range(-10.0f, 10.0f), 4), Quaternion.identity);
+        Instantiate(HP, new Vector2(Random.Range(-20.0f, 20.0f), 4), Quaternion.identity);
     }
 }
